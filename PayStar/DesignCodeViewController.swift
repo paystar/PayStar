@@ -31,7 +31,6 @@ class DesignCodeViewController: UIViewController {
         return inptview
     }()
     
-    
     var userIdTextField: UITextField = {
         let textField = UITextField()
         textField.text = "UserId"
