@@ -1,10 +1,4 @@
-//
-//  HomeSer.swift
-//  PayStar
-//
-//  Created by Swapna Botta on 19/09/19.
-//  Copyright © 2019 SwapnaBotta. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
