@@ -11,8 +11,6 @@
     }
     return true
 }
- 
- 
  -------------------
  /*@IBAction func sendText(sender: UIButton) {
  if (MFMessageComposeViewController.canSendText()) {
@@ -27,9 +25,6 @@
  //... handle sms screen actions
  self.dismiss(animated: true, completion: nil)
  }
- 
- 
- 
 */
 
 

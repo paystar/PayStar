@@ -14,6 +14,8 @@
 		C61FDBAE22E09CBB00D0D4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */; };
 		C61FDBD422E0A8A800D0D4E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */; };
 		C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */; };
+		C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B000023339A9A00645BDD /* GetPostServiceCall.swift */; };
+		C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BFFFE233399AB00645BDD /* HomeSer.swift */; };
 		C685A5832308539400DB6898 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685A5822308539400DB6898 /* Alert.swift */; };
 		C69996802329010500A6D20C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699967F2329010500A6D20C /* Validations.swift */; };
 		C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EF6422F096EF000883EB /* RoughViewController.swift */; };
@@ -46,6 +48,8 @@
 		C61FDBAF22E09CBB00D0D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		C62B000023339A9A00645BDD /* GetPostServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostServiceCall.swift; sourceTree = "<group>"; };
+		C62BFFFE233399AB00645BDD /* HomeSer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSer.swift; sourceTree = "<group>"; };
 		C685A5822308539400DB6898 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C699967F2329010500A6D20C /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		C6A2EF6422F096EF000883EB /* RoughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoughViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C61FDBA222E09CB900D0D4E4 /* PayStar */,
+				C61FDBAF22E09CBB00D0D4E4 /* Info.plist */,
 				C61FDBA122E09CB900D0D4E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,31 +103,88 @@
 		C61FDBA222E09CB900D0D4E4 /* PayStar */ = {
 			isa = PBXGroup;
 			children = (
-				C6B41DEC231EDF44008827E7 /* KeyChainWrapper */,
-				C6B41DDF231EDD56008827E7 /* ENSideMenu */,
-				C6A150062309C4D30095F25E /* HelpingClass */,
+				C62B000223339CF300645BDD /* Model */,
+				C62B000923339FAF00645BDD /* View */,
+				C62B000A2333A04600645BDD /* Controllers */,
 				C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */,
+			);
+			path = PayStar;
+			sourceTree = "<group>";
+		};
+		C62B000223339CF300645BDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C62BFFFE233399AB00645BDD /* HomeSer.swift */,
+				C62B000023339A9A00645BDD /* GetPostServiceCall.swift */,
+				C6A150062309C4D30095F25E /* HelpingClass */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C62B000923339FAF00645BDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */,
+				C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */,
+				C61FDBA722E09CB900D0D4E4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C62B000A2333A04600645BDD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6B41DDF231EDD56008827E7 /* SideMenuCode */,
+				C6B41DEC231EDF44008827E7 /* KeyChainWrapper */,
+				C62BFFFD2333959C00645BDD /* LoginControls */,
+				C62B000C2333A12700645BDD /* Home */,
+				C62B000D2333A16700645BDD /* Payment */,
+				C62BFFFC233394F700645BDD /* SideMenuControls */,
+				C6A2EF6422F096EF000883EB /* RoughViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C62B000C2333A12700645BDD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */,
+				C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C62B000D2333A16700645BDD /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */,
+				C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */,
+				C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */,
+				C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		C62BFFFC233394F700645BDD /* SideMenuControls */ = {
+			isa = PBXGroup;
+			children = (
+				C6B41DE9231EDD7C008827E7 /* AboutUsController.swift */,
+				C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */,
+				C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */,
+				C6C7539023277E3400659D56 /* FeedBackViewController.swift */,
+				C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */,
+			);
+			path = SideMenuControls;
+			sourceTree = "<group>";
+		};
+		C62BFFFD2333959C00645BDD /* LoginControls */ = {
+			isa = PBXGroup;
+			children = (
 				C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */,
 				C6D846EC22F2BCA100B8005C /* LoginViewController.swift */,
 				C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */,
-				C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */,
-				C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */,
-				C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */,
-				C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */,
-				C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */,
-				C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */,
-				C6B41DE9231EDD7C008827E7 /* AboutUsController.swift */,
-				C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */,
-				C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */,
-				C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */,
-				C6C7539023277E3400659D56 /* FeedBackViewController.swift */,
-				C6A2EF6422F096EF000883EB /* RoughViewController.swift */,
-				C61FDBA722E09CB900D0D4E4 /* Main.storyboard */,
-				C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */,
-				C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */,
-				C61FDBAF22E09CBB00D0D4E4 /* Info.plist */,
 			);
-			path = PayStar;
+			path = LoginControls;
 			sourceTree = "<group>";
 		};
 		C6A150062309C4D30095F25E /* HelpingClass */ = {
@@ -134,7 +196,7 @@
 			path = HelpingClass;
 			sourceTree = "<group>";
 		};
-		C6B41DDF231EDD56008827E7 /* ENSideMenu */ = {
+		C6B41DDF231EDD56008827E7 /* SideMenuCode */ = {
 			isa = PBXGroup;
 			children = (
 				C6B41DE0231EDD56008827E7 /* ENSideMenu.swift */,
@@ -142,7 +204,7 @@
 				C6B41DE2231EDD56008827E7 /* ENSideMenuNavigationController.swift */,
 				C6B41DE3231EDD56008827E7 /* MyNavigationController.swift */,
 			);
-			path = ENSideMenu;
+			path = SideMenuCode;
 			sourceTree = "<group>";
 		};
 		C6B41DEC231EDF44008827E7 /* KeyChainWrapper */ = {
@@ -247,7 +309,9 @@
 				C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */,
 				C685A5832308539400DB6898 /* Alert.swift in Sources */,
 				C6C7538F23277BBB00659D56 /* PrivacyPolicyViewController.swift in Sources */,
+				C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */,
 				C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */,
+				C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */,
 				C6B41DF0231EDF45008827E7 /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZA846S83Y;
-				INFOPLIST_FILE = PayStar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,7 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SZA846S83Y;
-				INFOPLIST_FILE = PayStar/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
