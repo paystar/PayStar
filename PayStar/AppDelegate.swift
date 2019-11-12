@@ -6,16 +6,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+    var userId: String?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let userId: String? = KeychainWrapper.standard.string(forKey: "Uid") 
+         userId = KeychainWrapper.standard.string(forKey: "Uid") 
         print("appdelegate userid \(userId)")
         if userId != nil{
-            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = mainStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-            self.window!.rootViewController = homeVC
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            window?.rootViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeNavigation")
         }
         return true
     }

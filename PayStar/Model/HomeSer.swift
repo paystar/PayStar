@@ -3,7 +3,6 @@
 import Foundation
 import UIKit
 
-
 struct JsonDataHome {
     
     var id: String?
@@ -36,4 +35,11 @@ struct paymentModeHome {
         
     }
     
+}
+struct SelectId {
+    var pid: String?
+    
+    init(financer: String) {
+     self.pid = financer
+    }
 }

@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48B4620B4586EA8A9C2D4C52 /* Pods_PayStar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; };
+		C60FEF082366E5A000BF9BEA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FEF072366E5A000BF9BEA /* WebKit.framework */; };
 		C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */; };
 		C61FDBA622E09CB900D0D4E4 /* DesignCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */; };
 		C61FDBA922E09CB900D0D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61FDBA722E09CB900D0D4E4 /* Main.storyboard */; };
@@ -16,9 +18,12 @@
 		C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */; };
 		C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B000023339A9A00645BDD /* GetPostServiceCall.swift */; };
 		C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BFFFE233399AB00645BDD /* HomeSer.swift */; };
+		C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */; };
+		C68385EF235098AC005BA27A /* Pods_PayStar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C685A5832308539400DB6898 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685A5822308539400DB6898 /* Alert.swift */; };
 		C69996802329010500A6D20C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699967F2329010500A6D20C /* Validations.swift */; };
 		C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EF6422F096EF000883EB /* RoughViewController.swift */; };
+		C6ADCCEC2345EFB3008B904A /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */; };
 		C6B2F35022EDABA600291B8C /* PaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */; };
 		C6B2F35222EDB89000291B8C /* PaymentOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */; };
 		C6B3290422E8C3E5000F6ABE /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */; };
@@ -33,12 +38,31 @@
 		C6C7538D232771EA00659D56 /* TermsandConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */; };
 		C6C7538F23277BBB00659D56 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */; };
 		C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7539023277E3400659D56 /* FeedBackViewController.swift */; };
+		C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */; };
+		C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */; };
 		C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */; };
 		C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EC22F2BCA100B8005C /* LoginViewController.swift */; };
+		C6DD1519233F5F7700673CE5 /* JsonFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DD1518233F5F7700673CE5 /* JsonFields.swift */; };
 		C6F6F63722E3259F002F693D /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C68385EE23509889005BA27A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 11;
+			files = (
+				C68385EF235098AC005BA27A /* Pods_PayStar.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A30D82A4689C79E4ED9BD03 /* Pods-PayStar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayStar.release.xcconfig"; path = "Target Support Files/Pods-PayStar/Pods-PayStar.release.xcconfig"; sourceTree = "<group>"; };
+		3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayStar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60FEF072366E5A000BF9BEA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C61FDBA022E09CB900D0D4E4 /* PayStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeViewController.swift; sourceTree = "<group>"; };
@@ -50,9 +74,11 @@
 		C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C62B000023339A9A00645BDD /* GetPostServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostServiceCall.swift; sourceTree = "<group>"; };
 		C62BFFFE233399AB00645BDD /* HomeSer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSer.swift; sourceTree = "<group>"; };
+		C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerSerarchViewController.swift; sourceTree = "<group>"; };
 		C685A5822308539400DB6898 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C699967F2329010500A6D20C /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		C6A2EF6422F096EF000883EB /* RoughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoughViewController.swift; sourceTree = "<group>"; };
+		C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
 		C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsViewController.swift; sourceTree = "<group>"; };
 		C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
@@ -67,9 +93,13 @@
 		C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandConditionsViewController.swift; sourceTree = "<group>"; };
 		C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		C6C7539023277E3400659D56 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
+		C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMakePaymentViewController.swift; sourceTree = "<group>"; };
+		C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController1.swift; sourceTree = "<group>"; };
 		C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		C6D846EC22F2BCA100B8005C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C6DD1518233F5F7700673CE5 /* JsonFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFields.swift; sourceTree = "<group>"; };
 		C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
+		FE67C12252101FD10D8D3700 /* Pods-PayStar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayStar.debug.xcconfig"; path = "Target Support Files/Pods-PayStar/Pods-PayStar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,18 +107,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60FEF082366E5A000BF9BEA /* WebKit.framework in Frameworks */,
+				48B4620B4586EA8A9C2D4C52 /* Pods_PayStar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4601F31E7CB0364D3C9993D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE67C12252101FD10D8D3700 /* Pods-PayStar.debug.xcconfig */,
+				1A30D82A4689C79E4ED9BD03 /* Pods-PayStar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C61FDB9722E09CB900D0D4E4 = {
 			isa = PBXGroup;
 			children = (
 				C61FDBA222E09CB900D0D4E4 /* PayStar */,
-				C61FDBAF22E09CBB00D0D4E4 /* Info.plist */,
 				C61FDBA122E09CB900D0D4E4 /* Products */,
+				4601F31E7CB0364D3C9993D2 /* Pods */,
+				FF65D03B4736F54B8779D009 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +145,19 @@
 		C61FDBA222E09CB900D0D4E4 /* PayStar */ = {
 			isa = PBXGroup;
 			children = (
+				C6B41DEC231EDF44008827E7 /* KeyChainWrapper */,
+				C6B41DDF231EDD56008827E7 /* SideMenuCode */,
 				C62B000223339CF300645BDD /* Model */,
-				C62B000923339FAF00645BDD /* View */,
-				C62B000A2333A04600645BDD /* Controllers */,
+				C62BFFFD2333959C00645BDD /* LoginControls */,
+				C62B000C2333A12700645BDD /* Home */,
+				C62B000D2333A16700645BDD /* Payment */,
+				C62BFFFC233394F700645BDD /* SideMenuControls */,
 				C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */,
+				C6A2EF6422F096EF000883EB /* RoughViewController.swift */,
+				C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */,
+				C61FDBAF22E09CBB00D0D4E4 /* Info.plist */,
+				C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */,
+				C61FDBA722E09CB900D0D4E4 /* Main.storyboard */,
 			);
 			path = PayStar;
 			sourceTree = "<group>";
@@ -114,6 +165,7 @@
 		C62B000223339CF300645BDD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */,
 				C62BFFFE233399AB00645BDD /* HomeSer.swift */,
 				C62B000023339A9A00645BDD /* GetPostServiceCall.swift */,
 				C6A150062309C4D30095F25E /* HelpingClass */,
@@ -121,33 +173,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C62B000923339FAF00645BDD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */,
-				C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */,
-				C61FDBA722E09CB900D0D4E4 /* Main.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C62B000A2333A04600645BDD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C6B41DDF231EDD56008827E7 /* SideMenuCode */,
-				C6B41DEC231EDF44008827E7 /* KeyChainWrapper */,
-				C62BFFFD2333959C00645BDD /* LoginControls */,
-				C62B000C2333A12700645BDD /* Home */,
-				C62B000D2333A16700645BDD /* Payment */,
-				C62BFFFC233394F700645BDD /* SideMenuControls */,
-				C6A2EF6422F096EF000883EB /* RoughViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		C62B000C2333A12700645BDD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */,
 				C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */,
 				C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */,
 			);
@@ -158,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */,
+				C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */,
+				C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */,
 				C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */,
 				C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */,
 				C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */,
@@ -180,7 +211,7 @@
 		C62BFFFD2333959C00645BDD /* LoginControls */ = {
 			isa = PBXGroup;
 			children = (
-				C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */,
+				C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */,
 				C6D846EC22F2BCA100B8005C /* LoginViewController.swift */,
 				C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */,
 			);
@@ -192,6 +223,7 @@
 			children = (
 				C685A5822308539400DB6898 /* Alert.swift */,
 				C699967F2329010500A6D20C /* Validations.swift */,
+				C6DD1518233F5F7700673CE5 /* JsonFields.swift */,
 			);
 			path = HelpingClass;
 			sourceTree = "<group>";
@@ -216,6 +248,15 @@
 			path = KeyChainWrapper;
 			sourceTree = "<group>";
 		};
+		FF65D03B4736F54B8779D009 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C60FEF072366E5A000BF9BEA /* WebKit.framework */,
+				3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C61FDBB222E09CBB00D0D4E4 /* Build configuration list for PBXNativeTarget "PayStar" */;
 			buildPhases = (
+				DEF895466B523417CD7A4894 /* [CP] Check Pods Manifest.lock */,
 				C61FDB9C22E09CB900D0D4E4 /* Sources */,
 				C61FDB9D22E09CB900D0D4E4 /* Frameworks */,
 				C61FDB9E22E09CB900D0D4E4 /* Resources */,
+				F390D41209BCD9FEFE7B9DFD /* [CP] Embed Pods Frameworks */,
+				C68385EE23509889005BA27A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -282,6 +326,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DEF895466B523417CD7A4894 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayStar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F390D41209BCD9FEFE7B9DFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayStar/Pods-PayStar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayStar/Pods-PayStar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayStar/Pods-PayStar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C61FDB9C22E09CB900D0D4E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -292,11 +378,14 @@
 				C6F6F63722E3259F002F693D /* MakePaymentViewController.swift in Sources */,
 				C6B41DEF231EDF45008827E7 /* KeychainWrapper.swift in Sources */,
 				C69996802329010500A6D20C /* Validations.swift in Sources */,
+				C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */,
 				C6B41DE7231EDD56008827E7 /* MyNavigationController.swift in Sources */,
+				C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */,
 				C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */,
 				C6B41DEA231EDD7C008827E7 /* ContactUsViewController.swift in Sources */,
 				C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */,
 				C6B2F35222EDB89000291B8C /* PaymentOptionsTableViewCell.swift in Sources */,
+				C6DD1519233F5F7700673CE5 /* JsonFields.swift in Sources */,
 				C6C7538D232771EA00659D56 /* TermsandConditionsViewController.swift in Sources */,
 				C6B41DE6231EDD56008827E7 /* ENSideMenuNavigationController.swift in Sources */,
 				C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */,
@@ -305,11 +394,13 @@
 				C6B3290422E8C3E5000F6ABE /* PaymentDetailsViewController.swift in Sources */,
 				C6B41DE5231EDD56008827E7 /* MyMenuTableViewController.swift in Sources */,
 				C6B41DE4231EDD56008827E7 /* ENSideMenu.swift in Sources */,
+				C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */,
 				C6B41DEB231EDD7C008827E7 /* AboutUsController.swift in Sources */,
 				C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */,
 				C685A5832308539400DB6898 /* Alert.swift in Sources */,
 				C6C7538F23277BBB00659D56 /* PrivacyPolicyViewController.swift in Sources */,
 				C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */,
+				C6ADCCEC2345EFB3008B904A /* LeftMenuVC.swift in Sources */,
 				C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */,
 				C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */,
 				C6B41DF0231EDF45008827E7 /* KeychainItemAccessibility.swift in Sources */,
@@ -456,16 +547,17 @@
 		};
 		C61FDBB322E09CBB00D0D4E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE67C12252101FD10D8D3700 /* Pods-PayStar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZA846S83Y;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				DEVELOPMENT_TEAM = DFMWQ4Z26Q;
+				INFOPLIST_FILE = "$(SRCROOT)/PayStar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SwapnaBotta.PayStar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapnaBotta.PayStar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,16 +566,17 @@
 		};
 		C61FDBB422E09CBB00D0D4E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A30D82A4689C79E4ED9BD03 /* Pods-PayStar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZA846S83Y;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				DEVELOPMENT_TEAM = DFMWQ4Z26Q;
+				INFOPLIST_FILE = "$(SRCROOT)/PayStar/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = SwapnaBotta.PayStar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapnaBotta.PayStar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
