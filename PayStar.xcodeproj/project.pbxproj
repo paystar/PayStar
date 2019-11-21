@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48B4620B4586EA8A9C2D4C52 /* Pods_PayStar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; };
 		C60FEF082366E5A000BF9BEA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FEF072366E5A000BF9BEA /* WebKit.framework */; };
+		C61B7D22237F104500DACF6F /* ToastMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B7D21237F104500DACF6F /* ToastMsg.swift */; };
 		C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */; };
 		C61FDBA622E09CB900D0D4E4 /* DesignCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */; };
 		C61FDBA922E09CB900D0D4E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61FDBA722E09CB900D0D4E4 /* Main.storyboard */; };
@@ -18,9 +19,16 @@
 		C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */; };
 		C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B000023339A9A00645BDD /* GetPostServiceCall.swift */; };
 		C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BFFFE233399AB00645BDD /* HomeSer.swift */; };
+		C62EE8B62383E9A100F45B1B /* FetchBillerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE8B52383E9A100F45B1B /* FetchBillerViewController.swift */; };
 		C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */; };
+		C672A9F4237C2D31004761BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F3237C2D31004761BB /* ProfileViewController.swift */; };
+		C672A9F7237C4A3D004761BB /* AddUPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F6237C4A3D004761BB /* AddUPIViewController.swift */; };
+		C672A9F9237C4A52004761BB /* RemoveUPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F8237C4A52004761BB /* RemoveUPIViewController.swift */; };
 		C68385EF235098AC005BA27A /* Pods_PayStar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C685A5832308539400DB6898 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685A5822308539400DB6898 /* Alert.swift */; };
+		C694DFFA237D1C9E00673C9F /* Refund and CancellationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */; };
+		C694DFFC237D33D100673C9F /* MakePaymenyOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFFB237D33D100673C9F /* MakePaymenyOptionsViewController.swift */; };
+		C694DFFE237D33F200673C9F /* MakePayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */; };
 		C69996802329010500A6D20C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699967F2329010500A6D20C /* Validations.swift */; };
 		C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EF6422F096EF000883EB /* RoughViewController.swift */; };
 		C6ADCCEC2345EFB3008B904A /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */; };
@@ -39,6 +47,8 @@
 		C6C7538F23277BBB00659D56 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */; };
 		C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7539023277E3400659D56 /* FeedBackViewController.swift */; };
 		C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */; };
+		C6CAAD55238655170009932F /* NewBillerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CAAD54238655170009932F /* NewBillerSearchViewController.swift */; };
+		C6CAAD57238655390009932F /* BillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CAAD56238655390009932F /* BillerTableViewCell.swift */; };
 		C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */; };
 		C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */; };
 		C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EC22F2BCA100B8005C /* LoginViewController.swift */; };
@@ -63,6 +73,7 @@
 		1A30D82A4689C79E4ED9BD03 /* Pods-PayStar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayStar.release.xcconfig"; path = "Target Support Files/Pods-PayStar/Pods-PayStar.release.xcconfig"; sourceTree = "<group>"; };
 		3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayStar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60FEF072366E5A000BF9BEA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C61B7D21237F104500DACF6F /* ToastMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMsg.swift; sourceTree = "<group>"; };
 		C61FDBA022E09CB900D0D4E4 /* PayStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeViewController.swift; sourceTree = "<group>"; };
@@ -74,8 +85,15 @@
 		C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C62B000023339A9A00645BDD /* GetPostServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostServiceCall.swift; sourceTree = "<group>"; };
 		C62BFFFE233399AB00645BDD /* HomeSer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSer.swift; sourceTree = "<group>"; };
+		C62EE8B52383E9A100F45B1B /* FetchBillerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBillerViewController.swift; sourceTree = "<group>"; };
 		C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerSerarchViewController.swift; sourceTree = "<group>"; };
+		C672A9F3237C2D31004761BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		C672A9F6237C4A3D004761BB /* AddUPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUPIViewController.swift; sourceTree = "<group>"; };
+		C672A9F8237C4A52004761BB /* RemoveUPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUPIViewController.swift; sourceTree = "<group>"; };
 		C685A5822308539400DB6898 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Refund and CancellationViewController.swift"; sourceTree = "<group>"; };
+		C694DFFB237D33D100673C9F /* MakePaymenyOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymenyOptionsViewController.swift; sourceTree = "<group>"; };
+		C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePayCellTableViewCell.swift; sourceTree = "<group>"; };
 		C699967F2329010500A6D20C /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		C6A2EF6422F096EF000883EB /* RoughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoughViewController.swift; sourceTree = "<group>"; };
 		C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
@@ -94,6 +112,8 @@
 		C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		C6C7539023277E3400659D56 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMakePaymentViewController.swift; sourceTree = "<group>"; };
+		C6CAAD54238655170009932F /* NewBillerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillerSearchViewController.swift; sourceTree = "<group>"; };
+		C6CAAD56238655390009932F /* BillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerTableViewCell.swift; sourceTree = "<group>"; };
 		C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController1.swift; sourceTree = "<group>"; };
 		C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		C6D846EC22F2BCA100B8005C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +174,7 @@
 				C62BFFFC233394F700645BDD /* SideMenuControls */,
 				C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */,
 				C6A2EF6422F096EF000883EB /* RoughViewController.swift */,
+				C672A9F5237C3C7C004761BB /* New Group */,
 				C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */,
 				C61FDBAF22E09CBB00D0D4E4 /* Info.plist */,
 				C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */,
@@ -189,9 +210,14 @@
 				C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */,
 				C6C96EDE2354E3F9004EEF48 /* AllMakePaymentViewController.swift */,
 				C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */,
+				C6CAAD54238655170009932F /* NewBillerSearchViewController.swift */,
+				C6CAAD56238655390009932F /* BillerTableViewCell.swift */,
+				C62EE8B52383E9A100F45B1B /* FetchBillerViewController.swift */,
 				C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */,
 				C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */,
 				C6B3290322E8C3E5000F6ABE /* PaymentDetailsViewController.swift */,
+				C694DFFB237D33D100673C9F /* MakePaymenyOptionsViewController.swift */,
+				C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -204,6 +230,7 @@
 				C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */,
 				C6C7539023277E3400659D56 /* FeedBackViewController.swift */,
 				C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */,
+				C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */,
 			);
 			path = SideMenuControls;
 			sourceTree = "<group>";
@@ -218,12 +245,23 @@
 			path = LoginControls;
 			sourceTree = "<group>";
 		};
+		C672A9F5237C3C7C004761BB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				C672A9F3237C2D31004761BB /* ProfileViewController.swift */,
+				C672A9F6237C4A3D004761BB /* AddUPIViewController.swift */,
+				C672A9F8237C4A52004761BB /* RemoveUPIViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C6A150062309C4D30095F25E /* HelpingClass */ = {
 			isa = PBXGroup;
 			children = (
 				C685A5822308539400DB6898 /* Alert.swift */,
 				C699967F2329010500A6D20C /* Validations.swift */,
 				C6DD1518233F5F7700673CE5 /* JsonFields.swift */,
+				C61B7D21237F104500DACF6F /* ToastMsg.swift */,
 			);
 			path = HelpingClass;
 			sourceTree = "<group>";
@@ -376,13 +414,20 @@
 				C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */,
 				C61FDBA622E09CB900D0D4E4 /* DesignCodeViewController.swift in Sources */,
 				C6F6F63722E3259F002F693D /* MakePaymentViewController.swift in Sources */,
+				C62EE8B62383E9A100F45B1B /* FetchBillerViewController.swift in Sources */,
+				C6CAAD57238655390009932F /* BillerTableViewCell.swift in Sources */,
 				C6B41DEF231EDF45008827E7 /* KeychainWrapper.swift in Sources */,
 				C69996802329010500A6D20C /* Validations.swift in Sources */,
+				C672A9F7237C4A3D004761BB /* AddUPIViewController.swift in Sources */,
 				C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */,
+				C672A9F4237C2D31004761BB /* ProfileViewController.swift in Sources */,
 				C6B41DE7231EDD56008827E7 /* MyNavigationController.swift in Sources */,
+				C694DFFA237D1C9E00673C9F /* Refund and CancellationViewController.swift in Sources */,
 				C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */,
 				C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */,
+				C694DFFE237D33F200673C9F /* MakePayCellTableViewCell.swift in Sources */,
 				C6B41DEA231EDD7C008827E7 /* ContactUsViewController.swift in Sources */,
+				C6CAAD55238655170009932F /* NewBillerSearchViewController.swift in Sources */,
 				C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */,
 				C6B2F35222EDB89000291B8C /* PaymentOptionsTableViewCell.swift in Sources */,
 				C6DD1519233F5F7700673CE5 /* JsonFields.swift in Sources */,
@@ -390,8 +435,11 @@
 				C6B41DE6231EDD56008827E7 /* ENSideMenuNavigationController.swift in Sources */,
 				C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */,
 				C6B2F35022EDABA600291B8C /* PaymentOptionsViewController.swift in Sources */,
+				C672A9F9237C4A52004761BB /* RemoveUPIViewController.swift in Sources */,
+				C694DFFC237D33D100673C9F /* MakePaymenyOptionsViewController.swift in Sources */,
 				C61FDBD422E0A8A800D0D4E4 /* HomeViewController.swift in Sources */,
 				C6B3290422E8C3E5000F6ABE /* PaymentDetailsViewController.swift in Sources */,
+				C61B7D22237F104500DACF6F /* ToastMsg.swift in Sources */,
 				C6B41DE5231EDD56008827E7 /* MyMenuTableViewController.swift in Sources */,
 				C6B41DE4231EDD56008827E7 /* ENSideMenu.swift in Sources */,
 				C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */,

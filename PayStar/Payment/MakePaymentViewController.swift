@@ -22,6 +22,7 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dueamountLabel: UILabel!
     @IBOutlet weak var servicechargeLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    var totalAmount: String?
     var nsobjJson: JsonFields?
     //var financerId = [SelectId]()
     var financerId: String?
@@ -54,12 +55,15 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func makePaymentButton(_ sender: Any) {
         
-        
         let loginUserId = KeychainWrapper.standard.string(forKey: "Uid")
         if loginUserId != nil{
             print("go to payment!!!!")
+            let makepayVC = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymenyOptionsViewController") as! MakePaymenyOptionsViewController
+            makepayVC.amounText = totalAmount
+            self.present(makepayVC, animated: true)
         }
         else{
+            
             print("go to login VC")
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.present(loginVC, animated: true)
@@ -142,17 +146,16 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
                                 self.dueamountLabel.text = (rsSymbol)  +  " "  + (dueAmnt!)
                                 self.servicechargeLabel.text = "\u{20B9}";
                                 self.totalLabel.text = (rsSymbol)  +  " "  + (dueAmnt!)
+                                self.totalAmount = dueAmount
                             }      
                         }
                     }
                         
                     else{
-                        
                         DispatchQueue.main.async {
                             AlertFun.ShowAlert(title: "", message: "Assessment Number not found", in: self)
                         }
                     }
-                    
                     
                 }catch{
                     print("error")
@@ -197,6 +200,7 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         }
     }
     func sideMenuConfig(){
+        
         // Define the menus
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuVC") as? UISideMenuNavigationController
         SideMenuManager.default.menuPresentMode = .menuSlideIn
@@ -206,7 +210,6 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        
         // Set up a cool background image for demo purposes
     }
 }

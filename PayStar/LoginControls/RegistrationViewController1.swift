@@ -66,7 +66,6 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         phoneNumTextField.inputAccessoryView = toolBar
     }
     @objc func doneClicked(){
-        
         phoneNumTextField.resignFirstResponder()
     }
     
@@ -153,31 +152,40 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         self.present(loginVC, animated: true)
     }
     @IBAction func registerButton(_ sender: Any) {
-        if (phoneNumTextField.text?.isPhoneNumber)!
-        {
-            
-            if(nameTextField.text == ""){
+      
+        let passwordCount = passwordTextField.text
+            if(nameTextField.text?.isEmpty)!{
                 AlertFun.ShowAlert(title: "", message: "Please enter name", in: self)
             }
-            else if(phoneNumTextField.text == ""){
+            else if(phoneNumTextField.text?.isEmpty)!{
                 AlertFun.ShowAlert(title: "", message: "Please enter MobileNumber", in: self)
             }
-            else if(passwordTextField.text == ""){
+            else if (phoneNumTextField.text?.isPhoneNumberValid)! == false
+                {
+                    AlertFun.ShowAlert(title: "", message: "Please enter valid phonenum", in: self)
+                }
+            else if(passwordTextField.text?.isEmpty)!{
                 AlertFun.ShowAlert(title: "", message: "Please enter Password", in: self)
             }
-            else if(conformPasswordTextField.text == ""){
+            else if passwordCount!.count <= 5{
+                AlertFun.ShowAlert(title: "", message: "Please enter valid Password", in: self)
+
+            }
+            else if(conformPasswordTextField.text?.isEmpty)!{
                 AlertFun.ShowAlert(title: "", message: "Please enter ConformPassword", in: self)
             }
+            
             else if(passwordTextField.text != conformPasswordTextField.text)
             {
-                AlertFun.ShowAlert(title: "", message: "Please enter SamePassword", in: self)
+                AlertFun.ShowAlert(title: "", message: "Password and Confirm Password doesn't Match", in: self)
             }
-            else if (nameTextField.text ==  "" || phoneNumTextField.text == "" || passwordTextField.text ==  "" || conformPasswordTextField.text == "")
+            else if (nameTextField.text!.isEmpty || phoneNumTextField.text!.isEmpty || passwordTextField.text!.isEmpty || conformPasswordTextField.text!.isEmpty)
             {
                 registerButton.isHidden = false
                 sendOtpButton.isHidden = true
                 AlertFun.ShowAlert(title: "", message: "RequiredAllFields", in: self)
             }
+         
             else{
                 registerButton.isHidden = true
                 sendOtpButton.isHidden = false
@@ -191,10 +199,15 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
                 registerService()
                 self.otpTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
             }
+       // }
+        
+      /*  else{
+            AlertFun.ShowAlert(title: "", message: "Please enter valid password", in: self)
+        }
         }
     else{
             AlertFun.ShowAlert(title: "", message: "Please enter valid PhoneNumber", in: self)
-        }
+        }*/
     }
     
     @IBAction func sendOTPButton(_ sender: Any) {
@@ -212,6 +225,8 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
             
             totalTime = totalTime - 1
             print(totalTime)
+            resendButn.setTitle("Resend Otp in",for: .normal)
+
             otpcountLabel.text = String(totalTime)
             resendButn.isEnabled = false
             otpcountLabel.isHidden = false
@@ -220,7 +235,8 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         else {
             otpcountLabel.isHidden = true
             resendButn.isEnabled = true
-            
+            resendButn.setTitle("Resend Otp",for: .normal)
+
             otpTimer.invalidate()
             print("call your api")
             //registerService()

@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logoHeight: NSLayoutConstraint!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     @IBOutlet weak var loginButton: UIButton!
+    //9876543212 ---- 1234567
     //let deviceSize = UIScreen.main.bounds.size
     var regId: Int?
     var regPhnum: String?
@@ -22,65 +23,51 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userIdTextFielf.placeholder = "User ID"
+        passwordTextField.placeholder = "Password"
         
+        userIdTextFielf.text = userIdTextFielf.placeholder
+        passwordTextField.text = passwordTextField.placeholder
         
-        //var yourImage: UIImage = UIImage(named: "mobile-bg 2-1")!
-        //backgroundImage.image = yourImage
-        //backgroundImage.alpha = 0.08
-        //Do any additional setup after loading the view.
-        //imgLogo.layer.cornerRadius = imgLogo.frame.height/2
         loginButton.layer.cornerRadius = 10
         self.contentLabel.text = "    Designed & Developed by \n   anyEMI Online Services Pvt Ltd"
         regId = KeychainWrapper.standard.integer(forKey: "id")
         regPhnum = KeychainWrapper.standard.string(forKey: "user_phnum")
         regPassword = KeychainWrapper.standard.string(forKey: "user_password")
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+   /* func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
+    }*/
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == textField.placeholder
+        {
+            if textField == passwordTextField
+            {
+                passwordTextField.isSecureTextEntry = true
+            }
+            //textField.text.
+            textField.text = ""
+        }
     }
-    //MARK:- ButtonActions
-    /*@IBAction func loginButton(_ sender: Any) {
-     
-     if(userIdTextFielf.text?.isEmpty)!{
-     AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber", in: self)
-     }
-     else if(passwordTextField.text?.isEmpty)!{
-     AlertFun.ShowAlert(title: "", message: "Please enter Password", in: self)
-     }
-     else if(passwordTextField.text?.isEmpty)! && (userIdTextFielf.text?.isEmpty)! {
-     AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber & Password", in: self)
-     }
-     else{
-     logInService()
-     }
-     
-     /*
-     if userIdTextFielf.text?.isEmptyOrWhitespace() ?? true
-     {
-     AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber", in: self)
-     return
-     }
-     else if passwordTextField.text?.isEmptyOrWhitespace() ?? true
-     {
-     AlertFun.ShowAlert(title: "", message: "Please enter Password", in: self)
-     return
-     }
-     else{
-     logInService()
-     }
-     */
-     }
-     */
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        if textField.text?.isEmpty ?? true {
+            textField.text = textField.placeholder
+            passwordTextField.clearsOnBeginEditing = false
+            passwordTextField.isSecureTextEntry = false
+        }
+    }
+    
+   
     @IBAction func loginButton(_ sender: Any) {
         let userid = actualInput(for: userIdTextFielf, defaultText: "User ID")
         let password = actualInput(for: passwordTextField, defaultText: "Password")
         
         switch (userid.isEmpty, password.isEmpty) {
         case (true, true):
-            AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber & Password", in: self)
+            AlertFun.ShowAlert(title: "", message: "Please enter User ID and Password", in: self)
             
         case (true, _):
-            AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber", in: self)
+            AlertFun.ShowAlert(title: "", message: "Please enter User ID", in: self)
             
         case (_, true):
             AlertFun.ShowAlert(title: "", message: "Please enter Password", in: self)
@@ -99,6 +86,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 280, height: 40))
+        toastLabel.backgroundColor = UIColor.gray//black.withAlphaComponent(0.5)
+        toastLabel.center = self.view.center
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont(name: "Helvetica Neue", size: 15)
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.5
+        toastLabel.layer.cornerRadius = 20;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 15.0, delay: 0.0, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+
     @IBAction func registerButton(_ sender: Any) {
         /*let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
          self.navigationController?.pushViewController(nextViewController, animated: true)
@@ -122,6 +129,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
     //MARK:- Service part
     func logInService(){
         
@@ -148,39 +156,36 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     print("the json of loginnnnnn \(json)")
                     var loginStatus = json["status"] as? String
+                    print("login status: \(loginStatus)")
                     DispatchQueue.main.async {
                         
                         if loginStatus == "Failed"
                         {
-                            /*  if(self.userIdTextFielf.text == ""){
-                             
-                             AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber", in: self)
-                             }
-                             else if(self.passwordTextField.text == ""){
-                             AlertFun.ShowAlert(title: "", message: "Please enter Password", in: self)
-                             }
-                             else if(self.passwordTextField.text == "") && (self.userIdTextFielf.text == "") {
-                             AlertFun.ShowAlert(title: "", message: "Please enter PhoneNumber & Password", in: self)
-                             }
-                             else{*/
+                            AlertFun.ShowAlert(title: "", message: json["msg"] as! String, in: self)
                             
-                            AlertFun.ShowAlert(title: "", message: "Invalid creadintials", in: self)
-                            //}
+                            //AlertFun.ShowAlert(title: "", message: "Invalid creditials", in: self)
                         }
                             
                         else{
                             self.Uid = json["id"] as? String
                             //let loginPhoneNum = json["user_id"] as! String
-                            //let nameL = json["user_name"] as? String
+                            let nameL = json["user_name"] as? String
                             let emailL = json["user_email"] as? String
                             // print("login email \(emailL!)")
                             print("login uid \(String(describing: self.Uid))")
                             
+                        KeychainWrapper.standard.set(self.passwordTextField.text ?? "", forKey:"password")
                             KeychainWrapper.standard.set(emailL ?? "", forKey: "user_email")
+
+                            KeychainWrapper.standard.set(nameL ?? "", forKey: "user_name")
+
+                        var savedPasswrd1: String = KeychainWrapper.standard.string(forKey: "password") ?? ""
+                            
+                            print("saved login password \(savedPasswrd1)")
                             let saveUserId: Bool = KeychainWrapper.standard.set(self.Uid!, forKey: "Uid")
-                            
+                           // let savePassword: Bool = KeychainWrapper.standard.set(self.Uid!, forKey: "Uid")
+
                             // DispatchQueue.main.async {
-                            
                             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                             let navigationController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeNavigation")
                             let appDelagate = UIApplication.shared.delegate
@@ -214,20 +219,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 do{
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     print("the json of forgotpassword \(json)")
+                    
+                    var forgotStatus = json["status"] as? String
                     DispatchQueue.main.async {
-                        AlertFun.ShowAlert(title: "", message: "Password sent to your mobile number", in: self)
+                        if forgotStatus == "Failed"
+                        {
+                            //self.showToast(message: "Password sent to your mobile number")
+                            AlertFun.ShowAlert(title: "", message: "Phone number does not exist", in: self)
+                        }
+                        else{
+                            DispatchQueue.main.async {
+                                self.showToast(message: "Password sent to your Mobile Number")//#454341
+                                //AlertFun.ShowAlert(title: "", message: "Password sent to your mobile number", in: self)
+                            }
+                        }
                     }
-                    /*
-                     if (self.Uid!.isEmpty)
-                     {
-                     print("login fail")
-                     AlertFun.ShowAlert(title: "", message: "Please register", in: self)
-                     }
-                     else{
-                     AlertFun.ShowAlert(title: "", message: "password sent to your mobile num", in: self)
-                     }
-                     */
-                    //AlertFun.ShowAlert(title: "", message: "password sent to your mobile num", in: self)
                 }catch{
                     print("error")
                 }

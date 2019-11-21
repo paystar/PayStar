@@ -104,7 +104,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         self.present(loginVC, animated: true)
     }
     @IBAction func registerButton(_ sender: Any) {
-        if (phoneNumTextField.text?.isPhoneNumber)!
+        if (phoneNumTextField.text?.isPhoneNumberValid)!
         {
             
             if(nameTextField.text == ""){
@@ -173,6 +173,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             resendButn.isEnabled = true
             
             otpTimer.invalidate()
+            //resendButn.setTitle("Send OTP",for: .normal)
+
             print("call your api")
             //registerService()
             totalTime = 60

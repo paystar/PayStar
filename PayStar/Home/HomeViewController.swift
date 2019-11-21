@@ -3,6 +3,9 @@
 import UIKit
 import SDWebImage
 import SideMenu
+
+
+
 struct JsonData {
     
     var iconHome: String?
@@ -15,7 +18,7 @@ struct JsonData {
     }
 }
 
-enum Category: String {
+enum Category: String, CaseIterable {
     case water = "WATER"
     //case hpcl = "HPCL"
     case electricity = "ELECTRICITY"
@@ -25,6 +28,54 @@ enum Category: String {
     case mobilepostpd = "MOBILE POSTPAID"
     case cashpoint = "CASHPOINT"
     case dth = "DTH"
+    
+    static var asArray: [Category] {return self.allCases}
+    
+    func asInt() -> Int {
+        return Category.asArray.firstIndex(of: self)!
+    }
+    func asString() -> String {
+        return self.rawValue
+    }
+}
+
+struct MunicipalCorporation : Decodable{
+    var id : String
+    var bname : String
+    var bbcategoryname : String
+    var bcustomerparms : [Bcustomerparms]
+}
+
+struct Bcustomerparms : Decodable {
+    var paramName : String
+    var dataType : String
+    var optional :  Bool?
+    var minLength : Int
+    var maxLength : Int
+}
+
+struct JsonDataBiller{
+    var bname: String = ""
+    var bcategoryname: String = ""
+    var bcustomerparms: [cDetails] = [cDetails]()
+    
+    init(bname: String, bcategoryname: String, bcustomerparms: [cDetails]){
+        self.bname = bname
+        self.bcategoryname = bcategoryname
+        self.bcustomerparms = bcustomerparms
+    }
+}
+
+struct cDetails{
+    var paramName: String = ""
+    var minLength: String = ""
+    var maxLength: String = ""
+    
+    init(paramName: String, minLength: String, maxLength: String) {
+        self.paramName = paramName
+        self.minLength = minLength
+        self.maxLength = maxLength
+    }
 }
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
@@ -44,7 +95,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var yourImage: UIImage = UIImage(named: "logoanyemiBackGround-1")!
         backgrounrImage.image = yourImage
         backgrounrImage.alpha = 0.5
-        
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = UIActivityIndicatorView.Style.gray

@@ -18,7 +18,7 @@ class PrivacyPolicyViewController: UIViewController, WKNavigationDelegate {
         let request = URLRequest(url: url)
         privasyWeb.load(request)
         
-        // add activity
+        //add activity
         self.privasyWeb.addSubview(self.activity)
         self.activity.startAnimating()
         self.privasyWeb.navigationDelegate = self

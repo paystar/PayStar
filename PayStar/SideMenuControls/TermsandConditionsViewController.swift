@@ -10,7 +10,7 @@ class TermsandConditionsViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Do any additional setup after loading the view.
         
         //webViewTC.loadRequest(NSURLRequest(url: NSURL(string: "http://anyemi.com/termsandconditions.php")! as URL) as URLRequest)
         
