@@ -1,6 +1,7 @@
 
 import UIKit
 import CoreData
+import SwiftKeychainWrapper
 
 class UserProfileCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
@@ -32,10 +33,10 @@ class LeftMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataArr = [ProfileStruct(name: "Login", img:UIImage(named: "loin")), ProfileStruct(name: "Home", img:UIImage(named: "h1 2")),ProfileStruct(name: "About Us", img:UIImage(named: "a5")), ProfileStruct(name: "Terms & Conditions", img:UIImage(named: "m1")), ProfileStruct(name: "Contact Us", img:UIImage(named: "cu")),ProfileStruct(name: "Refund & Cancellation", img:UIImage(named: "cancellation")), ProfileStruct(name: "Privacy Policy", img:UIImage(named: "pps")), ProfileStruct(name: "FeedBack", img:UIImage(named: "feedb"))]
+        dataArr = [ProfileStruct(name: "Login", img:UIImage(named: "loin")), ProfileStruct(name: "Home", img:UIImage(named: "h1 2")), ProfileStruct(name: "Collections", img:UIImage(named: "collec")), ProfileStruct(name: "About Us", img:UIImage(named: "a5")), ProfileStruct(name: "Terms & Conditions", img:UIImage(named: "m1")), ProfileStruct(name: "Contact Us", img:UIImage(named: "cu")),ProfileStruct(name: "Refund & Cancellation", img:UIImage(named: "cancellation")), ProfileStruct(name: "Privacy Policy", img:UIImage(named: "pps")), ProfileStruct(name: "FeedBack", img:UIImage(named: "feedb"))]
       
         
-        dataArr1 = [ProfileStruct(name: "Home", img:UIImage(named: "h1 2")),ProfileStruct(name: "About Us", img:UIImage(named: "a5")),ProfileStruct(name: "Profile", img:UIImage(named: "profile")), ProfileStruct(name: "Terms & Conditions", img:UIImage(named: "m1")), ProfileStruct(name: "Contact Us", img:UIImage(named: "cu")), ProfileStruct(name: "Refund & Cancellation", img:UIImage(named: "cancellation")), ProfileStruct(name: "Privacy Policy", img:UIImage(named: "pps")), ProfileStruct(name: "FeedBack", img:UIImage(named: "feedb")), ProfileStruct(name: "SignOut", img:UIImage(named: "signout"))]
+        dataArr1 = [ProfileStruct(name: "Home", img:UIImage(named: "h1 2")), ProfileStruct(name: "Collections", img:UIImage(named: "collec")), ProfileStruct(name: "About Us", img:UIImage(named: "a5")),ProfileStruct(name: "Profile", img:UIImage(named: "profile")), ProfileStruct(name: "Terms & Conditions", img:UIImage(named: "m1")), ProfileStruct(name: "Contact Us", img:UIImage(named: "cu")), ProfileStruct(name: "Refund & Cancellation", img:UIImage(named: "cancellation")), ProfileStruct(name: "Privacy Policy", img:UIImage(named: "pps")), ProfileStruct(name: "FeedBack", img:UIImage(named: "feedb")), ProfileStruct(name: "SignOut", img:UIImage(named: "signout"))]
         
         loginEmail = KeychainWrapper.standard.string(forKey: "user_email")
         loginName = KeychainWrapper.standard.string(forKey: "user_name")
@@ -43,8 +44,7 @@ class LeftMenuVC: UIViewController {
         
         userTbl.tableFooterView = UIView(frame: .zero)
         userTbl.separatorStyle = .none
-        //NotificationCenter.default.addObserver(self, selector: #selector(languageDidChange(notification:)), name: NSNotification.Name(rawValue: "did_change_language"), object: nil)
-       //  getUserDetailsData()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -84,30 +84,7 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
-    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 18))
-        view.backgroundColor = UIColor.green
-        let profilrImage = UIImageView(frame: CGRect(x: 20, y: 100, width: 70, height: 70))
-        profilrImage.image = UIImage(named: "financier_icon")
-        
-        if userId != nil{
-            
-            let nameLabel = UILabel(frame: CGRect(x: 20, y: 180, width: 200, height: 30))
-            nameLabel.text = "anyEmi"
-            nameLabel.textColor = UIColor.black
-            
-            let emailLabel = UILabel(frame: CGRect(x: 20, y: 210, width: 200, height: 30))
-            emailLabel.text = "gjhgjgjgj"//loginEmail//"anyemi@gmail.com"
-            emailLabel.textColor = UIColor.black
-            view.addSubview(nameLabel)
-            view.addSubview(emailLabel)
-        }
-        view.addSubview(profilrImage)
-        self.view.addSubview(view)
-        return view
-    }
-    */
+    
     
     func emailVal(){
         if userId != nil{
@@ -124,34 +101,38 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 1 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "AboutUsController") as! AboutUsController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "CollectionsViewController") as! CollectionsViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 2 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "AboutUsController") as! AboutUsController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 3 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "TermsandConditionsViewController") as! TermsandConditionsViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 4 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "TermsandConditionsViewController") as! TermsandConditionsViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 5 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "RefundandCancellationViewController") as! RefundandCancellationViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 6 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "RefundandCancellationViewController") as! RefundandCancellationViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 7 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "FeedBackViewController") as! FeedBackViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 8 {
+                let vc = storyboard?.instantiateViewController(withIdentifier: "FeedBackViewController") as! FeedBackViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            if indexPath.row == 9 {
                 let vc = storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                 self.navigationController?.pushViewController(vc, animated: true)
                 KeychainWrapper.standard.removeObject(forKey: "Uid")//(key: "Uid")
@@ -167,26 +148,30 @@ extension LeftMenuVC: UITableViewDelegate, UITableViewDataSource {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 2 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "AboutUsController") as! AboutUsController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 3 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "TermsandConditionsViewController") as! TermsandConditionsViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "AboutUsController") as! AboutUsController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 4 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "TermsandConditionsViewController") as! TermsandConditionsViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 5 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "RefundandCancellationViewController") as! RefundandCancellationViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 6 {
-                let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
+                let vc = storyboard?.instantiateViewController(withIdentifier: "RefundandCancellationViewController") as! RefundandCancellationViewController
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             if indexPath.row == 7 {
+                let vc = storyboard?.instantiateViewController(withIdentifier: "PrivacyPolicyViewController") as! PrivacyPolicyViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            if indexPath.row == 8 {
                 let vc = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
                 self.navigationController?.pushViewController(vc, animated: true)
 

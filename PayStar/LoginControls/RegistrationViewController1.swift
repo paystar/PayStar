@@ -2,9 +2,19 @@
 
 import UIKit
 import MessageUI
+import TPKeyboardAvoiding
+import SwiftKeychainWrapper
+
 class RegistrationViewController1: UIViewController, UITextFieldDelegate {
     
     //MARK:- Outlets
+    
+    @IBOutlet weak var viewinScrollview: UIView!
+    
+    @IBOutlet weak var fieldsContainerView: UIView!
+    
+        
+    
     
     @IBOutlet weak var scrolView: UIScrollView!
     var activeTextField = UITextField()
@@ -38,23 +48,45 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         // Hide the navigation bar on the this view controller
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.scrolView.isScrollEnabled = false
-        //otpcountLabel.isHidden = true
-        //self.resendButn.isHidden = true
-        //otpTextField.isHidden = true
+        otpcountLabel.isHidden = true
+        self.resendButn.isHidden = true
+        otpTextField.isHidden = true
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activeTextField.autocorrectionType = .no
+
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
+//
         
-        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardAppear(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardDisappear(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+//           NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         self.phoneNumTextField.keyboardType = .phonePad
         doneButtonOnKeyboard()
-        otpTextField.isHidden = true
-        resendButn.isHidden = true
+//        otpTextField.isHidden = true
+//        resendButn.isHidden = true
     }
+    
+//    @objc func keyboardDidShow(notification: NSNotification) {
+//        let info = notification.userInfo
+//        let keyBoardSize = info![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+//        scrolView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+//        scrolView.scrollIndicatorInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyBoardSize.height, right: 0.0)
+//    }
+//
+//    @objc func keyboardDidHide(notification: NSNotification) {
+//        scrolView.contentInset = UIEdgeInsets.zero
+//        scrolView.scrollIndicatorInsets = UIEdgeInsets.zero
+//    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+           self.navigationController?.isNavigationBarHidden = false
+       }
+    
     //MARK:- numberpad stuff
     func doneButtonOnKeyboard(){
         let toolBar: UIToolbar = UIToolbar()
@@ -78,32 +110,33 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @objc func onKeyboardAppear(_ notification: NSNotification) {
-        
-        let info = notification.userInfo!
-        let rect: CGRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as! CGRect
-        let kbSize = rect.size
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.height+20, right: 0)
-        self.scrolView.contentInset = insets
-        self.scrolView.scrollIndicatorInsets = insets
-        self.scrolView.isScrollEnabled = true
-        
-        var visibleRect: CGRect = self.scrolView.convert(self.scrolView.bounds, to: self.view)
-        visibleRect.size.height -= rect.size.height;
-        let inputRect: CGRect = self.activeTextField.convert(self.activeTextField.bounds, to: self.scrolView)
-        if (visibleRect.contains(inputRect)) {
-            self.scrolView.scrollRectToVisible(inputRect, animated: true)
-        }
-    }
-    
-    @objc func onKeyboardDisappear(_ notification: NSNotification) {
-       
-        self.scrolView.isScrollEnabled = false
-       if let offset = self.offsetBeforeShowKeyboard {
-            self.scrolView.setContentOffset(offset, animated: true)
-        }
-        self.offsetBeforeShowKeyboard = nil
-    }
+    //MARK:- scrollview stuff
+//    @objc func onKeyboardAppear(_ notification: NSNotification) {
+//
+//        let info = notification.userInfo!
+//        let rect: CGRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as! CGRect
+//        let kbSize = rect.size
+//        let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.height+20, right: 0)
+//        self.scrolView.contentInset = insets
+//        self.scrolView.scrollIndicatorInsets = insets
+//        self.scrolView.isScrollEnabled = true
+//
+//        var visibleRect: CGRect = self.scrolView.convert(self.scrolView.bounds, to: self.view)
+//        visibleRect.size.height -= rect.size.height;
+//        let inputRect: CGRect = self.activeTextField.convert(self.activeTextField.bounds, to: self.scrolView)
+//        if (visibleRect.contains(inputRect)) {
+//            self.scrolView.scrollRectToVisible(inputRect, animated: true)
+//        }
+//    }
+//
+//    @objc func onKeyboardDisappear(_ notification: NSNotification) {
+//
+//        self.scrolView.isScrollEnabled = false
+//       if let offset = self.offsetBeforeShowKeyboard {
+//            self.scrolView.setContentOffset(offset, animated: true)
+//        }
+//        self.offsetBeforeShowKeyboard = nil
+//    }
     //MARK:- Textfield delegate methods
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -112,9 +145,9 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
         activeTextField.text = ""
 
         self.scrolView.isScrollEnabled = true
-        if (self.offsetBeforeShowKeyboard == nil) {
-            self.offsetBeforeShowKeyboard = self.scrolView.contentOffset
-        }
+//        if (self.offsetBeforeShowKeyboard == nil) {
+//            self.offsetBeforeShowKeyboard = self.scrolView.contentOffset
+//        }
        /* if  activeTextField == self.self.conformPasswordTextField {
             animateViewMoving(up: true, moveValue: 60)
         }
@@ -192,9 +225,18 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
                 otpTextField.isHidden = false
                 resendButn.isHidden = false
                 otpcountLabel.isHidden = false
-                
+                                
                 DispatchQueue.main.async {
-                    self.otpTextField.text = self.otpField as? String
+                    
+                    let strOtp: String?
+                    if let v = self.otpField {
+                       strOtp = "\(v)"
+                        
+                        self.otpTextField.text = strOtp
+
+                    }
+                    //println(str)
+                    //self.otpTextField.text = self.otpField as? String
                 }
                 registerService()
                 self.otpTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
@@ -277,15 +319,18 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
             }
             if let data = data {
                 do{
-                    var json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     let regUserStatus = json["status"] as? String
                     
                     if regUserStatus == "sucess"
                     {
                         print("the json regggggggggggis \(json)")
                         let phNum = json["mobile_number"] as? Int
+                        print("reg phNUm \(String(describing: phNum))")
                         let status = json["status"] as? String
+                        print("reg status \(String(describing: status))")
                         self.otpField = json["otp"] as? Int
+                        
                         // self.otpTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                     }
                     else{
@@ -341,7 +386,8 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
                             print("otp name \(String(describing: name))")
                             print("otp phnumber \(String(describing: phNum))")
                             print("otp uid \(String(describing: self.regUid))")
-                            
+                            print("otp name \(String(describing: email))")
+
                             DispatchQueue.main.async {
                                 KeychainWrapper.standard.set(self.regUid!, forKey: "regUid")
                                 KeychainWrapper.standard.set(phNum!, forKey: "user_phnum")
@@ -367,9 +413,7 @@ class RegistrationViewController1: UIViewController, UITextFieldDelegate {
             }
         }).resume()
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
-    }
+   
     /*
     func animateViewMoving (up:Bool, moveValue :CGFloat){
         let movementDuration:TimeInterval = 0.3

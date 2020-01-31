@@ -55,7 +55,7 @@ class AllMakePaymentViewController: UIViewController {
     var paramName: String?
     
     
-    var billerVC: BillerSerarchViewController!
+    //var billerVC: BillerSerarchViewController!
     //var category: Category?
     //var categoryName: String?
     //var paramName: String?
@@ -86,6 +86,11 @@ class AllMakePaymentViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     func allPaymentService(){
+        
+        
+        DispatchQueue.main.async {
+                   self.activityIndicator.startAnimating()
+               }
         
         let urlStr = "https://dev.anyemi.com/webservices/anyemi/api.php?rquest=billermdm"
         let url = URL(string: urlStr)
@@ -131,9 +136,10 @@ class AllMakePaymentViewController: UIViewController {
                         }
                         
                         let bName = billerdetail["bname"] as! String
-                        
+                        let blrId = billerdetail["billerId"] as! String
                         // create JsonDataBiller object
-                        let jdBiller = JsonDataBiller(bname: bName,
+                        let jdBiller = JsonDataBiller(billerId: blrId,
+                                                      bname: bName,
                                                       bcategoryname: bCat,
                                                       bcustomerparms: aParams)
                         
@@ -141,18 +147,20 @@ class AllMakePaymentViewController: UIViewController {
                         self.arrayOfBillerData.append(jdBiller)
                         
                     }
-                    
                 }
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                
             }
+                
             catch {
                 print("catch error")
             }
-            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
+
             
         }).resume()
     }
@@ -161,29 +169,14 @@ class AllMakePaymentViewController: UIViewController {
 extension AllMakePaymentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let category = category else {return 0}
-//        switch category {
-//        case .electricity: return electricityArray.count
-//        case .water: return waterArray.count
-//        case .cashpoint: return iteamsArray.count
-//        case .dth: return dthArray.count
-//        case .gas: return gasArray.count
-//        case .mobilepostpd: return mobpostpdArray.count
-//        case .brodbandpostpaid: return bdbndpostpdArray.count
-//        case .landlinepostpd: return landlineArray.count
-//
-//        }
-        
-        return arrayOfBillerData.count
 
+        return arrayOfBillerData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! PaymentTableViewCell
         
         cell.pamntTypeLabel.text = arrayOfBillerData[indexPath.row].bname
-        
-        // self.tableView.separatorStyle = .none
         return cell
     }
     
@@ -192,61 +185,36 @@ extension AllMakePaymentViewController: UITableViewDelegate, UITableViewDataSour
         if let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "NewBillerSearchViewController") as? NewBillerSearchViewController {
             nextViewController.toplabeText = arrayOfBillerData[indexPath.row].bname
             nextViewController.selectedBiller = arrayOfBillerData[indexPath.row]
+            nextViewController.saveBillerId = arrayOfBillerData[indexPath.row].billerId ?? ""
+           // nextViewController.textFieldKey = arrayOfBillerData[indexPath.row].billerId ?? ""
+
             self.navigationController?.pushViewController(nextViewController, animated: true)
         } else {
             print("Could not instantiate TextFiViewController")
         }
     }
-    
-    
-    
-    
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//         let cell = tableView.cellForRow(at: indexPath) as? PaymentTableViewCell
-//
-//      if let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BillerSerarchViewController") as? BillerSerarchViewController
-//       {
-//        switch category {
-//        case .electricity?: nextViewController.textFieldtext = electrictyParamArray[indexPath.row]
-//        KeychainWrapper.standard.set(self.electrictyParamArray[indexPath.row], forKey: "paramName")
-//        nextViewController.elMinL = electricityminLengthArray[indexPath.row]
-//
-//       // KeychainWrapper.standard.set(self.paramName ?? "", forKey: "paramName")
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .water?: nextViewController.textFieldtext = waterParamArray[indexPath.row]
-//        print("water paramname \(self.waterParamArray)")
-//        print("water paramname count\(self.waterParamArray.count)")
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//
-//        case .cashpoint?: nextViewController.textFieldtext = paramName
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .dth?: nextViewController.textFieldtext = dthParamArray[indexPath.row]
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .gas?: nextViewController.textFieldtext = gasParamArray[indexPath.row]
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .mobilepostpd?: nextViewController.textFieldtext = mobPostpParamArray[indexPath.row]
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .brodbandpostpaid?: nextViewController.textFieldtext = brodbandParamArray[indexPath.row]
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .landlinepostpd?: nextViewController.textFieldtext = landParamArray[indexPath.row]
-//        nextViewController.labelText = cell?.pamntTypeLabel.text
-//
-//        case .none:
-//            print("in didselect switch")
-//        }
-//        self.navigationController?.pushViewController(nextViewController, animated: true)
-//      }
-//        else{
-//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "BillerSerarchViewController") as? BillerSerarchViewController
-//        self.navigationController?.pushViewController(nextViewController!, animated: true)
-//        }
-//    }
 }
+/*
+extension AllMakePaymentViewController: UISideMenuNavigationControllerDelegate {
+
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+
+    }
+
+    func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appeared! (animated: \(animated))")
+    }
+
+    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappearing! (animated: \(animated))")
+        view?.backgroundColor = UIColor.white
+
+    }
+
+    func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappeared! (animated: \(animated))")
+    }
+}
+*/

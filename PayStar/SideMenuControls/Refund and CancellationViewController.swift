@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 class RefundandCancellationViewController: UIViewController {
    
     @IBOutlet weak var refundTextview: UITextView!
@@ -36,28 +36,25 @@ class RefundandCancellationViewController: UIViewController {
         refundTextview.isScrollEnabled = true
 
     }
+    
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+           print("in side menu")
+           //toggleSideMenuView()
+           view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+       }
 }
-/*
- 
- How to add two different font size to textview text in swift.
- 
- 
- import UIKit
- 
- class RefundandCancellationViewController: UIViewController {
- 
- @IBOutlet weak var refundTextview: UITextView!
- override func viewDidLoad() {
- super.viewDidLoad()
- 
- var heading = "Bills or Taxes once paid through the payment gateway shall not be refunded other then in the following circumstances:"
- var content = "\n \n 1. Multiple times debiting of Consumer Card/Bank Account due to ticnical error excluding Payment Gateway charges would be refunded to the consumer with in 1 week after submitting complaint form. \n \n 2. Consumers account being debited with excess amount in single transaction due to tecnical error will be deducted in next month transaction. \n \n 3. Due to technical error, payment being charged on the consumers Card/Bank Account but the Bill is unsuccessful. However, if in such cases, consumer wishes to seek refund of the amount, after deductionof Payment Gateway charges or any other charges within 1 week after submitting complaint form \n \n In case of any queries, please call anyEMI Online Services Pvt Ltd Helpdesk on +918008612200/5500 or write to helpdesk@anyemi.com"
- 
- 
- refundTextview.textColor = UIColor.gray
- refundTextview.text = heading + content
- 
- }
- }
- 
- */
+extension RefundandCancellationViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
+}
+

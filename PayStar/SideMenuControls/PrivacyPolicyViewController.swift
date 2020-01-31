@@ -2,6 +2,7 @@
 
 import UIKit
 import WebKit
+import SideMenu
 class PrivacyPolicyViewController: UIViewController, WKNavigationDelegate {
     
   
@@ -32,10 +33,23 @@ class PrivacyPolicyViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         activity.stopAnimating()
     }
-    
+   
     @IBAction func sideMenuButton(_ sender: Any) {
         
-        toggleSideMenuView()
-        
+        view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+
     }
+}
+extension PrivacyPolicyViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
 }

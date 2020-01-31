@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48B4620B4586EA8A9C2D4C52 /* Pods_PayStar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; };
 		C60FEF082366E5A000BF9BEA /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60FEF072366E5A000BF9BEA /* WebKit.framework */; };
+		C6199BBB2388296E001878D4 /* MobilePrepaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6199BBA2388296E001878D4 /* MobilePrepaidViewController.swift */; };
 		C61B7D22237F104500DACF6F /* ToastMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61B7D21237F104500DACF6F /* ToastMsg.swift */; };
 		C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */; };
 		C61FDBA622E09CB900D0D4E4 /* DesignCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */; };
@@ -17,15 +18,17 @@
 		C61FDBAE22E09CBB00D0D4E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61FDBAC22E09CBB00D0D4E4 /* LaunchScreen.storyboard */; };
 		C61FDBD422E0A8A800D0D4E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */; };
 		C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */; };
-		C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B000023339A9A00645BDD /* GetPostServiceCall.swift */; };
 		C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62BFFFE233399AB00645BDD /* HomeSer.swift */; };
 		C62EE8B62383E9A100F45B1B /* FetchBillerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EE8B52383E9A100F45B1B /* FetchBillerViewController.swift */; };
+		C64E8881238A6E04009FFDDA /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64E8880238A6E03009FFDDA /* CollectionsViewController.swift */; };
+		C653B09E23E4A06E00EE51FE /* PlansPrepaidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C653B09D23E4A06E00EE51FE /* PlansPrepaidViewController.swift */; };
 		C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */; };
 		C672A9F4237C2D31004761BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F3237C2D31004761BB /* ProfileViewController.swift */; };
 		C672A9F7237C4A3D004761BB /* AddUPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F6237C4A3D004761BB /* AddUPIViewController.swift */; };
 		C672A9F9237C4A52004761BB /* RemoveUPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672A9F8237C4A52004761BB /* RemoveUPIViewController.swift */; };
 		C68385EF235098AC005BA27A /* Pods_PayStar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C685A5832308539400DB6898 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C685A5822308539400DB6898 /* Alert.swift */; };
+		C68BA1D123E431E700B09651 /* PrepaidMobileServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68BA1D023E431E700B09651 /* PrepaidMobileServiceViewController.swift */; };
 		C694DFFA237D1C9E00673C9F /* Refund and CancellationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */; };
 		C694DFFC237D33D100673C9F /* MakePaymenyOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFFB237D33D100673C9F /* MakePaymenyOptionsViewController.swift */; };
 		C694DFFE237D33F200673C9F /* MakePayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */; };
@@ -41,8 +44,6 @@
 		C6B41DE7231EDD56008827E7 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B41DE3231EDD56008827E7 /* MyNavigationController.swift */; };
 		C6B41DEA231EDD7C008827E7 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */; };
 		C6B41DEB231EDD7C008827E7 /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B41DE9231EDD7C008827E7 /* AboutUsController.swift */; };
-		C6B41DEF231EDF45008827E7 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B41DED231EDF44008827E7 /* KeychainWrapper.swift */; };
-		C6B41DF0231EDF45008827E7 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B41DEE231EDF44008827E7 /* KeychainItemAccessibility.swift */; };
 		C6C7538D232771EA00659D56 /* TermsandConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */; };
 		C6C7538F23277BBB00659D56 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */; };
 		C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C7539023277E3400659D56 /* FeedBackViewController.swift */; };
@@ -52,7 +53,7 @@
 		C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */; };
 		C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */; };
 		C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D846EC22F2BCA100B8005C /* LoginViewController.swift */; };
-		C6DD1519233F5F7700673CE5 /* JsonFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DD1518233F5F7700673CE5 /* JsonFields.swift */; };
+		C6E39B2223A69C7400030F15 /* RegistrationViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E39B2123A69C7400030F15 /* RegistrationViewController2.swift */; };
 		C6F6F63722E3259F002F693D /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,24 +74,27 @@
 		1A30D82A4689C79E4ED9BD03 /* Pods-PayStar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayStar.release.xcconfig"; path = "Target Support Files/Pods-PayStar/Pods-PayStar.release.xcconfig"; sourceTree = "<group>"; };
 		3984E8B0ECAF4ACCBC185D28 /* Pods_PayStar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayStar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60FEF072366E5A000BF9BEA /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		C6199BBA2388296E001878D4 /* MobilePrepaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilePrepaidViewController.swift; sourceTree = "<group>"; };
 		C61B7D21237F104500DACF6F /* ToastMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMsg.swift; sourceTree = "<group>"; };
 		C61FDBA022E09CB900D0D4E4 /* PayStar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayStar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61FDBA322E09CB900D0D4E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeViewController.swift; sourceTree = "<group>"; };
 		C61FDBA822E09CB900D0D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C61FDBAA22E09CBB00D0D4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PayStar/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C61FDBAD22E09CBB00D0D4E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C61FDBAF22E09CBB00D0D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		C62B000023339A9A00645BDD /* GetPostServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostServiceCall.swift; sourceTree = "<group>"; };
 		C62BFFFE233399AB00645BDD /* HomeSer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSer.swift; sourceTree = "<group>"; };
 		C62EE8B52383E9A100F45B1B /* FetchBillerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchBillerViewController.swift; sourceTree = "<group>"; };
+		C64E8880238A6E03009FFDDA /* CollectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		C653B09D23E4A06E00EE51FE /* PlansPrepaidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansPrepaidViewController.swift; sourceTree = "<group>"; };
 		C6666A96236D963400D961C4 /* BillerSerarchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillerSerarchViewController.swift; sourceTree = "<group>"; };
-		C672A9F3237C2D31004761BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		C672A9F3237C2D31004761BB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		C672A9F6237C4A3D004761BB /* AddUPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUPIViewController.swift; sourceTree = "<group>"; };
 		C672A9F8237C4A52004761BB /* RemoveUPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveUPIViewController.swift; sourceTree = "<group>"; };
 		C685A5822308539400DB6898 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C68BA1D023E431E700B09651 /* PrepaidMobileServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepaidMobileServiceViewController.swift; sourceTree = "<group>"; };
 		C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Refund and CancellationViewController.swift"; sourceTree = "<group>"; };
 		C694DFFB237D33D100673C9F /* MakePaymenyOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymenyOptionsViewController.swift; sourceTree = "<group>"; };
 		C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePayCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,8 +110,6 @@
 		C6B41DE3231EDD56008827E7 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		C6B41DE9231EDD7C008827E7 /* AboutUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
-		C6B41DED231EDF44008827E7 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
-		C6B41DEE231EDF44008827E7 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		C6C7538C232771EA00659D56 /* TermsandConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsandConditionsViewController.swift; sourceTree = "<group>"; };
 		C6C7538E23277BBB00659D56 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		C6C7539023277E3400659D56 /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +119,7 @@
 		C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController1.swift; sourceTree = "<group>"; };
 		C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		C6D846EC22F2BCA100B8005C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C6DD1518233F5F7700673CE5 /* JsonFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonFields.swift; sourceTree = "<group>"; };
+		C6E39B2123A69C7400030F15 /* RegistrationViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController2.swift; sourceTree = "<group>"; };
 		C6F6F63622E3259F002F693D /* MakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
 		FE67C12252101FD10D8D3700 /* Pods-PayStar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayStar.debug.xcconfig"; path = "Target Support Files/Pods-PayStar/Pods-PayStar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,7 +167,6 @@
 		C61FDBA222E09CB900D0D4E4 /* PayStar */ = {
 			isa = PBXGroup;
 			children = (
-				C6B41DEC231EDF44008827E7 /* KeyChainWrapper */,
 				C6B41DDF231EDD56008827E7 /* SideMenuCode */,
 				C62B000223339CF300645BDD /* Model */,
 				C62BFFFD2333959C00645BDD /* LoginControls */,
@@ -188,7 +189,6 @@
 			children = (
 				C6D846EA22F2BC8500B8005C /* RegistrationViewController.swift */,
 				C62BFFFE233399AB00645BDD /* HomeSer.swift */,
-				C62B000023339A9A00645BDD /* GetPostServiceCall.swift */,
 				C6A150062309C4D30095F25E /* HelpingClass */,
 			);
 			path = Model;
@@ -200,6 +200,9 @@
 				C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */,
 				C61FDBD522E0A8C000D0D4E4 /* HomeCollectionViewCell.swift */,
 				C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */,
+				C68BA1D023E431E700B09651 /* PrepaidMobileServiceViewController.swift */,
+				C653B09D23E4A06E00EE51FE /* PlansPrepaidViewController.swift */,
+				C6199BBA2388296E001878D4 /* MobilePrepaidViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				C6C7539023277E3400659D56 /* FeedBackViewController.swift */,
 				C6B41DE8231EDD7B008827E7 /* ContactUsViewController.swift */,
 				C694DFF9237D1C9E00673C9F /* Refund and CancellationViewController.swift */,
+				C64E8880238A6E03009FFDDA /* CollectionsViewController.swift */,
 			);
 			path = SideMenuControls;
 			sourceTree = "<group>";
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CBF9EA2373D5C100B6F67C /* RegistrationViewController1.swift */,
+				C6E39B2123A69C7400030F15 /* RegistrationViewController2.swift */,
 				C6D846EC22F2BCA100B8005C /* LoginViewController.swift */,
 				C61FDBA522E09CB900D0D4E4 /* DesignCodeViewController.swift */,
 			);
@@ -260,7 +265,6 @@
 			children = (
 				C685A5822308539400DB6898 /* Alert.swift */,
 				C699967F2329010500A6D20C /* Validations.swift */,
-				C6DD1518233F5F7700673CE5 /* JsonFields.swift */,
 				C61B7D21237F104500DACF6F /* ToastMsg.swift */,
 			);
 			path = HelpingClass;
@@ -275,15 +279,6 @@
 				C6B41DE3231EDD56008827E7 /* MyNavigationController.swift */,
 			);
 			path = SideMenuCode;
-			sourceTree = "<group>";
-		};
-		C6B41DEC231EDF44008827E7 /* KeyChainWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				C6B41DED231EDF44008827E7 /* KeychainWrapper.swift */,
-				C6B41DEE231EDF44008827E7 /* KeychainItemAccessibility.swift */,
-			);
-			path = KeyChainWrapper;
 			sourceTree = "<group>";
 		};
 		FF65D03B4736F54B8779D009 /* Frameworks */ = {
@@ -413,25 +408,27 @@
 			files = (
 				C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */,
 				C61FDBA622E09CB900D0D4E4 /* DesignCodeViewController.swift in Sources */,
+				C6E39B2223A69C7400030F15 /* RegistrationViewController2.swift in Sources */,
 				C6F6F63722E3259F002F693D /* MakePaymentViewController.swift in Sources */,
 				C62EE8B62383E9A100F45B1B /* FetchBillerViewController.swift in Sources */,
 				C6CAAD57238655390009932F /* BillerTableViewCell.swift in Sources */,
-				C6B41DEF231EDF45008827E7 /* KeychainWrapper.swift in Sources */,
 				C69996802329010500A6D20C /* Validations.swift in Sources */,
 				C672A9F7237C4A3D004761BB /* AddUPIViewController.swift in Sources */,
 				C6666A97236D963400D961C4 /* BillerSerarchViewController.swift in Sources */,
 				C672A9F4237C2D31004761BB /* ProfileViewController.swift in Sources */,
+				C64E8881238A6E04009FFDDA /* CollectionsViewController.swift in Sources */,
 				C6B41DE7231EDD56008827E7 /* MyNavigationController.swift in Sources */,
 				C694DFFA237D1C9E00673C9F /* Refund and CancellationViewController.swift in Sources */,
 				C6CBF9EB2373D5C100B6F67C /* RegistrationViewController1.swift in Sources */,
 				C6D846ED22F2BCA100B8005C /* LoginViewController.swift in Sources */,
+				C6199BBB2388296E001878D4 /* MobilePrepaidViewController.swift in Sources */,
 				C694DFFE237D33F200673C9F /* MakePayCellTableViewCell.swift in Sources */,
 				C6B41DEA231EDD7C008827E7 /* ContactUsViewController.swift in Sources */,
 				C6CAAD55238655170009932F /* NewBillerSearchViewController.swift in Sources */,
 				C6D846EB22F2BC8500B8005C /* RegistrationViewController.swift in Sources */,
 				C6B2F35222EDB89000291B8C /* PaymentOptionsTableViewCell.swift in Sources */,
-				C6DD1519233F5F7700673CE5 /* JsonFields.swift in Sources */,
 				C6C7538D232771EA00659D56 /* TermsandConditionsViewController.swift in Sources */,
+				C653B09E23E4A06E00EE51FE /* PlansPrepaidViewController.swift in Sources */,
 				C6B41DE6231EDD56008827E7 /* ENSideMenuNavigationController.swift in Sources */,
 				C61FDBA422E09CB900D0D4E4 /* AppDelegate.swift in Sources */,
 				C6B2F35022EDABA600291B8C /* PaymentOptionsViewController.swift in Sources */,
@@ -442,6 +439,7 @@
 				C61B7D22237F104500DACF6F /* ToastMsg.swift in Sources */,
 				C6B41DE5231EDD56008827E7 /* MyMenuTableViewController.swift in Sources */,
 				C6B41DE4231EDD56008827E7 /* ENSideMenu.swift in Sources */,
+				C68BA1D123E431E700B09651 /* PrepaidMobileServiceViewController.swift in Sources */,
 				C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */,
 				C6B41DEB231EDD7C008827E7 /* AboutUsController.swift in Sources */,
 				C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */,
@@ -450,8 +448,6 @@
 				C62BFFFF233399AB00645BDD /* HomeSer.swift in Sources */,
 				C6ADCCEC2345EFB3008B904A /* LeftMenuVC.swift in Sources */,
 				C61FDBD622E0A8C000D0D4E4 /* HomeCollectionViewCell.swift in Sources */,
-				C62B000123339A9A00645BDD /* GetPostServiceCall.swift in Sources */,
-				C6B41DF0231EDF45008827E7 /* KeychainItemAccessibility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +531,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -589,6 +586,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

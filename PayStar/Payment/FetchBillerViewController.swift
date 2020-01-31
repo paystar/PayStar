@@ -10,7 +10,7 @@ import UIKit
 
 class FetchBillerViewController: UIViewController {
     
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var billerNameLabel: UILabel!
     @IBOutlet weak var servcNumLabel: UILabel!
     @IBOutlet weak var consumrNameLabel: UILabel!
@@ -33,12 +33,11 @@ class FetchBillerViewController: UIViewController {
     var amount: Double?
     var totalAmoun: String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("amount aaaaaaaa\(amount)")
-        
+        activityIndicator.isHidden = true
+        //activityIndicator.startAnimating()
+        print("amount aaaaaaaa\(String(describing: amount))")
         billerNameLabel.text = nameText
         servcNumLabel.text = servcNum
         consumrNameLabel.text = consumrName
@@ -48,24 +47,32 @@ class FetchBillerViewController: UIViewController {
         billDueDtaLabel.text = dueDate
         servcChargLabel.text = servcCharge
         //var strAmount: String = amount as? String ?? ""
+        //let dueAmnt = dueAmount
+        let rsSymbol = "\u{20B9}";
         
-        if let priceOfProduct = amount {
-            amountLabel.text = String(priceOfProduct )
+        //self.dueamountLabel.text = (rsSymbol)  +  " "  + (dueAmnt!)
+
+        if let bllrAmount = amount {
+            amountLabel.text = (rsSymbol)  +  " "  + String(bllrAmount )
         }
         //totalAmoun = amount
-        if let priceOfProduct = amount {
-            totalAmntLabel.text = String(priceOfProduct )
+        if let totalAmount = amount {
+            totalAmntLabel.text = (rsSymbol)  +  " "  + String(totalAmount)
         }
         
-        
-        
-        //amountLabel.text = String(amount)
-        //totalAmntLabel.text = totalAmoun
-        
+        //activityIndicator.stopAnimating()
     }
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func payButton(_ sender: Any) {
+        
+        let makepayVC = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymenyOptionsViewController") as! MakePaymenyOptionsViewController
+        makepayVC.amounText = totalAmntLabel.text
+        self.navigationController?.pushViewController(makepayVC, animated: true)
+        //self.present(makepayVC, animated: true)
+        
+    }
 }

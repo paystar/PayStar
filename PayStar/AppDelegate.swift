@@ -1,6 +1,7 @@
 
 
 import UIKit
+import SwiftKeychainWrapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
          userId = KeychainWrapper.standard.string(forKey: "Uid") 
-        print("appdelegate userid \(userId)")
+        print("appdelegate userid \(userId ?? "")")
         if userId != nil{
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             window?.rootViewController = mainStoryBoard.instantiateViewController(withIdentifier: "HomeNavigation")

@@ -2,6 +2,7 @@
 
 import UIKit
 import MessageUI
+import SwiftKeychainWrapper
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:- Outlets
@@ -39,6 +40,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         doneButtonOnKeyboard()
         otpTextField.isHidden = true
         resendButn.isHidden = true
+        
     }
     //MARK:- numberpad stuff
     func doneButtonOnKeyboard(){
@@ -46,7 +48,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         toolBar.barStyle = UIBarStyle.default
         toolBar.items=[
             UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: Selector(("doneClicked")))]
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(RegistrationViewController1.doneClicked))]
         toolBar.sizeToFit()
         phoneNumTextField.inputAccessoryView = toolBar
     }
@@ -136,9 +138,18 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                 resendButn.isHidden = false
                 otpcountLabel.isHidden = false
                 
+                
                 DispatchQueue.main.async {
-                    self.otpTextField.text = self.otpField as? String
+                    let strOtp: String?
+                                   if let v = self.otpField {
+                                      strOtp = "\(v)"
+                                       self.otpTextField.text = strOtp
+                                   }
                 }
+                
+//                DispatchQueue.main.async {
+//                    self.otpTextField.text = self.otpField as? String
+//                }
                 registerService()
                 self.otpTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
             }
@@ -214,7 +225,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             }
             if let data = data {
                 do{
-                    var json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     let regUserStatus = json["status"] as? String
                     
                     if regUserStatus == "sucess"
@@ -222,6 +233,9 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                         print("the json regggggggggggis \(json)")
                         let phNum = json["mobile_number"] as? Int
                         let status = json["status"] as? String
+                        print("the ph num \(String(describing: phNum))")
+                        print("the ph num \(String(describing: status))")
+
                         self.otpField = json["otp"] as? Int
                         // self.otpTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                     }
@@ -279,7 +293,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
                             print("otp name \(String(describing: name))")
                             print("otp phnumber \(String(describing: phNum))")
                             print("otp uid \(String(describing: self.regUid))")
-                            
+                            print("otp name \(String(describing: email))")
+
                             DispatchQueue.main.async {
                                 KeychainWrapper.standard.set(self.regUid!, forKey: "regUid")
                                 KeychainWrapper.standard.set(phNum!, forKey: "user_phnum")
@@ -326,36 +341,4 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
             animateViewMoving(up: false, moveValue: 90)
         }
     }
-}
-
-//MARK:- validations
-/*
- extension String {
- 
- var isPhoneNumber: Bool {
- let PHONE_REGEX = "^[6-9][0-9]{9}$";
- let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
- let result =  phoneTest.evaluate(with: self)
- return result
- }
- var isPasswordValid: Bool{
- let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
- let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
- return passwordValidation.evaluate(with: self)
- }
- }
- */
-extension UIScreen {
-    
-    /// Retrieve the (small) width from portrait mode
-    static var portraitWidth : CGFloat { return min(UIScreen.main.bounds.width, UIScreen.main.bounds.size.height) }
-    
-    /// Retrieve the (big) height from portrait mode
-    static var portraitHeight : CGFloat { return max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)  }
-    
-    /// Retrieve the (big) width from landscape mode
-    static var landscapeWidth : CGFloat { return max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) }
-    
-    /// Retrieve the (small) height from landscape mode
-    static var landscapeHeight : CGFloat { return min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) }
 }

@@ -1,7 +1,10 @@
 
 import UIKit
+import SwiftKeychainWrapper
+import SideMenu
 class FeedBackViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate  {
 
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var nameView: UIView!
@@ -35,7 +38,8 @@ class FeedBackViewController: UIViewController, UITextFieldDelegate, UITextViewD
         return true
     }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text == ""
+        textView.text = ""
+        messageTextView.textColor = UIColor.black
     }
     
     @IBAction func submitButton(_ sender: Any) {
@@ -68,14 +72,14 @@ class FeedBackViewController: UIViewController, UITextFieldDelegate, UITextViewD
         guard let name: String = nameTextfield.text else{return}
         guard let subject: String = subjectTextfield.text else{return}
         guard let email: String = emailTextfield.text else{return}
-        var msg: String = messageTextView.text
+        let msg: String = messageTextView.text
         
         let parameters = [
             "user_id": loginUID,
             "name": name,
             "subject": subject,
             "email": email,
-            "mobile_number": phonenumTextfield.text,
+            "mobile_number": phonenumTextfield.text as Any,
             "message": msg
             ] as [String : Any]
         let url = URL(string: "https://dev.anyemi.com/webservices/anyemi/feedback")
@@ -96,7 +100,7 @@ class FeedBackViewController: UIViewController, UITextFieldDelegate, UITextViewD
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     print("the json of forgotpassword \(json)")
                     
-                    var feedBackStatus = json["status"] as? String
+                    let feedBackStatus = json["status"] as? String
                     DispatchQueue.main.async {
                         
                         if feedBackStatus == "Failed"
@@ -116,4 +120,23 @@ class FeedBackViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }).resume()
     }
  //7093482917 -- feedback
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        print("in side menu")
+        //toggleSideMenuView()
+        //view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        //containerView?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+    }
+}
+extension FeedBackViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+}
 }

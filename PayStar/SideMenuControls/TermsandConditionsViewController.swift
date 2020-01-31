@@ -2,6 +2,7 @@
 
 import UIKit
 import WebKit
+import SideMenu
 class TermsandConditionsViewController: UIViewController, WKNavigationDelegate {
 
    
@@ -35,7 +36,20 @@ class TermsandConditionsViewController: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func sideMenuButton(_ sender: Any) {
-        toggleSideMenuView()
+        termscondiWeb?.backgroundColor = UIColor(white: 1, alpha: 0.9)
     }
     
+}
+extension TermsandConditionsViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
 }

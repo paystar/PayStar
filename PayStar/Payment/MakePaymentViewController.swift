@@ -3,8 +3,13 @@
 import UIKit
 import Foundation
 import SideMenu
+import SwiftKeychainWrapper
+
 class MakePaymentViewController: UIViewController, UITextFieldDelegate {
     
+    
+    
+    var scale: Bool = true
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -22,15 +27,22 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dueamountLabel: UILabel!
     @IBOutlet weak var servicechargeLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var firstContainerView: UIView!
+    @IBOutlet weak var secondContainerView: UIView!
+    @IBOutlet weak var thirdContainerView: UIView!
+    
+    
+    
+    let cornerRadius: CGFloat = 1
+
     var totalAmount: String?
-    var nsobjJson: JsonFields?
     //var financerId = [SelectId]()
     var financerId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var yourImage: UIImage = UIImage(named: "logoanyemiBackGround-1")!
+        let yourImage: UIImage = UIImage(named: "logoanyemiBackGround-1")!
         backgroundImage.image = yourImage
         backgroundImage.alpha = 0.5
         
@@ -41,38 +53,89 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         activityIndicator.style = UIActivityIndicatorView.Style.gray
         self.view.addSubview(activityIndicator)
         
+        
+//        firstContainerView.clipsToBounds = false
+//        firstContainerView.layer.shadowColor = UIColor.black.cgColor
+//        firstContainerView.layer.shadowOpacity = 1
+//        firstContainerView.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+//        firstContainerView.layer.shadowRadius = 1
+//        firstContainerView.layer.shadowPath = UIBezierPath(roundedRect: firstContainerView.bounds, cornerRadius: cornerRadius).cgPath
+//
+//        secondContainerView.clipsToBounds = false
+//        secondContainerView.layer.shadowColor = UIColor.black.cgColor
+//        secondContainerView.layer.shadowOpacity = 1
+//        secondContainerView.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+//        secondContainerView.layer.shadowRadius = 1
+//        secondContainerView.layer.shadowPath = UIBezierPath(roundedRect: secondContainerView.bounds, cornerRadius: cornerRadius).cgPath
+//
+//
+//        thirdContainerView.clipsToBounds = false
+//        thirdContainerView.layer.shadowColor = UIColor.black.cgColor
+//        thirdContainerView.layer.shadowOpacity = 1
+//        thirdContainerView.layer.shadowOffset = CGSize(width: 0.2, height: 0.2)
+//        thirdContainerView.layer.shadowRadius = 1
+//        thirdContainerView.layer.shadowPath = UIBezierPath(roundedRect: thirdContainerView.bounds, cornerRadius: cornerRadius).cgPath
+        
+        
+        
+        
+        
+        
+        
+        
+        
         serviceNumTextField.delegate = self
         //Do any additional setup after loading the view.
+        
+        
+        
+        
+        serviceNumTextField.placeholder = "Enter Service Number"
+
+        
         searchButton.backgroundColor = UIColor.clear
         searchButton.layer.cornerRadius = 5
         searchButton.layer.borderWidth = 2
         searchButton.layer.borderColor = UIColor(red: 74/255, green: 218/255, blue: 163/225, alpha: 1).cgColor
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        firstContainerView.addShadow()
+        secondContainerView.addShadow()
+        thirdContainerView.addShadow()
+    }
     @IBAction func sidemMenuButn(_ sender: Any) {
         sideMenuConfig()//toggleSideMenuView()
+       // view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+
     }
+        
     
     @IBAction func makePaymentButton(_ sender: Any) {
         
         let loginUserId = KeychainWrapper.standard.string(forKey: "Uid")
         if loginUserId != nil{
             print("go to payment!!!!")
-            let makepayVC = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymenyOptionsViewController") as! MakePaymenyOptionsViewController
+            
+             let makepayVC = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymenyOptionsViewController") as! MakePaymenyOptionsViewController
             makepayVC.amounText = totalAmount
-            self.present(makepayVC, animated: true)
+
+            
+            self.navigationController?.pushViewController(makepayVC, animated: true)
+            
+            
+//            let makepayVC = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymenyOptionsViewController") as! MakePaymenyOptionsViewController
+//            makepayVC.amounText = totalAmount
+//            self.present(makepayVC, animated: true)
+//
+            //self.navigationController?.present(MakePaymenyOptionsViewController(), animated: true, completion: nil)
         }
         else{
-            
             print("go to login VC")
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             self.present(loginVC, animated: true)
         }
-        
-        /*let payOption = self.storyboard?.instantiateViewController(withIdentifier: "PaymentOptionsViewController") as! PaymentOptionsViewController
-         self.navigationController?.pushViewController(payOption, animated: true)
-         */
-        //self.navigationController?.present(PaymentOptionsViewController(), animated: true)
     }
     func makePaymentService(){
         
@@ -95,7 +158,7 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         
         session.dataTask(with: req, completionHandler: {(data, response, error) in
             if response != nil {
-                print("make payment response \(response)")
+                print("make payment response \(String(describing: response))")
             }
             if let data = data {
                 do{
@@ -111,11 +174,7 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
                         let loanDetails = json["loan_details"] as! [String : Any]
                         let userPhNum = loanDetails["phone"] as? String
                         let adderss = loanDetails["address"] as? String//financer
-                        //let financerId = loanDetails["financer"] as? String
-                        //self.financerId = loanDetails["financer"] as? String
-                        //KeychainWrapper.standard.set(self.financerId ?? "", forKey: "financer")
                         
-                        KeychainWrapper.standard.set(self.nsobjJson?.finId ?? "", forKey: "financer")
                         
                         print("payment financerid \(String(describing: self.financerId))")
                         for detail in emiArray{
@@ -180,7 +239,8 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     @IBAction func searchBtnTapped(_ sender: Any) {
-        
+        //let userid = actualInput(for: userIdTextFielf, defaultText: "User ID")
+
         let servcNum = actualInput(for: serviceNumTextField, defaultText: "Enter Service Number")
         switch (servcNum.isEmpty){
         case (true):
@@ -211,5 +271,56 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         // Set up a cool background image for demo purposes
+    }
+}
+extension MakePaymentViewController: UISideMenuNavigationControllerDelegate {
+
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+        firstContainerView.alpha = 0.5
+        secondContainerView.alpha = 0.5
+        thirdContainerView.alpha = 0.5
+//        view?.backgroundColor = UIColor(white: 1, alpha: 0.7)
+//        firstContainerView?.backgroundColor = UIColor(white: 1, alpha: 0.7)
+//        secondContainerView?.backgroundColor = UIColor(white: 1, alpha: 0.7)
+//        thirdContainerView?.backgroundColor = UIColor(white: 1, alpha: 0.7)
+
+
+    }
+
+    func sideMenuDidAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appeared! (animated: \(animated))")
+    }
+
+    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappearing! (animated: \(animated))")
+//        view?.backgroundColor = UIColor.white
+//        firstContainerView?.backgroundColor = UIColor.white
+//        secondContainerView?.backgroundColor = UIColor.white
+//        thirdContainerView?.backgroundColor = UIColor.white
+        view.alpha = 1
+        firstContainerView.alpha = 1
+        secondContainerView.alpha = 1
+        thirdContainerView.alpha = 1
+
+    }
+
+    func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Disappeared! (animated: \(animated))")
+    }
+}
+extension UIView {
+    func addShadow() {
+        layer.shadowColor = UIColor.darkGray.cgColor
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.5
+        layer.masksToBounds = false
+
+        updateShadow()
+    }
+    func updateShadow() {
+        layer.shadowPath = UIBezierPath(roundedRect: self.bounds,cornerRadius: 3).cgPath
     }
 }

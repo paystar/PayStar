@@ -1,7 +1,7 @@
 
 
 import UIKit
-
+import SideMenu
 class PaymentOptionsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var walletView: UIView!
@@ -37,4 +37,24 @@ class PaymentOptionsViewController: UIViewController, UITableViewDelegate,UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.00
     }
+    @IBAction func sideMenuButton(_ sender: Any) {
+        print("in side menu")
+        //toggleSideMenuView()
+        //view?.backgroundColor = UIColor(white: 1, alpha: 0.9)
+    }
+    
+
+}
+extension PaymentOptionsViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
 }

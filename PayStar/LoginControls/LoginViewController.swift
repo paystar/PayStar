@@ -1,6 +1,7 @@
 
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -155,8 +156,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 do{
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     print("the json of loginnnnnn \(json)")
-                    var loginStatus = json["status"] as? String
-                    print("login status: \(loginStatus)")
+                    let loginStatus = json["status"] as? String
+                    print("login status: \(String(describing: loginStatus))")
                     DispatchQueue.main.async {
                         
                         if loginStatus == "Failed"
@@ -179,10 +180,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                             KeychainWrapper.standard.set(nameL ?? "", forKey: "user_name")
 
-                        var savedPasswrd1: String = KeychainWrapper.standard.string(forKey: "password") ?? ""
+                            let savedPasswrd1: String = KeychainWrapper.standard.string(forKey: "password") ?? ""
                             
                             print("saved login password \(savedPasswrd1)")
                             let saveUserId: Bool = KeychainWrapper.standard.set(self.Uid!, forKey: "Uid")
+                            print("login userid \(saveUserId)")
                            // let savePassword: Bool = KeychainWrapper.standard.set(self.Uid!, forKey: "Uid")
 
                             // DispatchQueue.main.async {
@@ -220,7 +222,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
                     print("the json of forgotpassword \(json)")
                     
-                    var forgotStatus = json["status"] as? String
+                    let forgotStatus = json["status"] as? String
                     DispatchQueue.main.async {
                         if forgotStatus == "Failed"
                         {
@@ -242,19 +244,3 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-/*
-extension UIScreen {
-    
-    /// Retrieve the (small) width from portrait mode
-    static var portraitWidth : CGFloat { return min(UIScreen.main.bounds.width, UIScreen.main.bounds.size.height) }
-    
-    /// Retrieve the (big) height from portrait mode
-    static var portraitHeight : CGFloat { return max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)  }
-    
-    /// Retrieve the (big) width from landscape mode
-    static var landscapeWidth : CGFloat { return max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) }
-    
-    /// Retrieve the (small) height from landscape mode
-    static var landscapeHeight : CGFloat { return min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height) }
-}
-*/

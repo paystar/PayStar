@@ -2,6 +2,7 @@
 
 import UIKit
 import WebKit
+import SideMenu
 class ContactUsViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var contactWeb: WKWebView!
@@ -34,8 +35,21 @@ class ContactUsViewController: UIViewController, WKNavigationDelegate {
         activity.stopAnimating()
     }
    
-    @IBAction func sideMenu(_ sender: Any) {
-        toggleSideMenuView()
+    @IBAction func sideMenuButn(_ sender: Any) {
     }
     
+    
+}
+extension ContactUsViewController : UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
 }
