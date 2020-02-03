@@ -5,7 +5,6 @@ import SDWebImage
 import SideMenu
 import SwiftKeychainWrapper
 
-
 struct JsonData {
     
     var iconHome: String?
@@ -169,16 +168,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if itemsArray[indexPath.item].typeName == "APEPDCL"{
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MakePaymentViewController") as? MakePaymentViewController
             self.navigationController?.pushViewController(nextViewController!, animated: true)
-            
         }
-        if itemsArray[indexPath.item].typeName == "MOBILE PREPAID"{
+        else if itemsArray[indexPath.item].typeName == "MOBILE PREPAID"{
             print("inprpaid!!!!!")
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "PrepaidMobileServiceViewController") as? PrepaidMobileServiceViewController
             self.navigationController?.pushViewController(nextViewController!, animated: true)
             }
-        if itemsArray[indexPath.item].typeName == "CASH POINT" {
+        else if itemsArray[indexPath.item].typeName == "CASH POINT" {
                AlertFun.ShowAlert(title: "", message: "Will update soon..", in: self)
-
             }
         else{
             let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "AllMakePaymentViewController") as? AllMakePaymentViewController
@@ -209,7 +206,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             case .dth?: nextViewController?.category = .dth
             nextViewController?.labelText = (nextViewController?.category).map { $0.rawValue }
 
-            default: print("in default")//AlertFun.ShowAlert(title: "", message: "will update soon..", in: self)
+            default: AlertFun.ShowAlert(title: "", message: "will update soon..", in: self)
             }
             self.navigationController?.pushViewController(nextViewController!, animated: true)
         }

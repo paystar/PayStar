@@ -1,11 +1,3 @@
-//
-//  CollectionsViewController.swift
-//  PayStar
-//
-//  Created by Swapna Botta on 24/11/19.
-//  Copyright © 2019 SwapnaBotta. All rights reserved.
-//
-
 import UIKit
 import SideMenu
 

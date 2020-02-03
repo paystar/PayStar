@@ -1,10 +1,3 @@
-//
-//  AllMakePaymentViewController.swift
-//  PayStar
-//
-//  Created by Swapna Botta on 14/10/19.
-//  Copyright © 2019 SwapnaBotta. All rights reserved.
-//
 
 import UIKit
 

@@ -12,6 +12,7 @@ target 'PayStar' do
     pod 'SDWebImage' 
     pod 'DropDown'
     pod 'TPKeyboardAvoiding'
+    pod 'HMSegmentedControl'
     pod 'SwiftKeychainWrapper'
 
 

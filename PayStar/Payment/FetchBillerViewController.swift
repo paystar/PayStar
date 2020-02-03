@@ -1,10 +1,3 @@
-//
-//  FetchBillerViewController.swift
-//  PayStar
-//
-//  Created by Swapna Botta on 19/11/19.
-//  Copyright © 2019 SwapnaBotta. All rights reserved.
-//
 
 import UIKit
 

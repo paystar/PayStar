@@ -77,17 +77,8 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
 //        thirdContainerView.layer.shadowPath = UIBezierPath(roundedRect: thirdContainerView.bounds, cornerRadius: cornerRadius).cgPath
         
         
-        
-        
-        
-        
-        
-        
-        
         serviceNumTextField.delegate = self
         //Do any additional setup after loading the view.
-        
-        
         
         
         serviceNumTextField.placeholder = "Enter Service Number"
@@ -101,9 +92,9 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        firstContainerView.addShadow()
-        secondContainerView.addShadow()
-        thirdContainerView.addShadow()
+        firstContainerView.dropShadow(scale: true)
+        secondContainerView.dropShadow(scale: true)
+        thirdContainerView.dropShadow(scale: true)
     }
     @IBAction func sidemMenuButn(_ sender: Any) {
         sideMenuConfig()//toggleSideMenuView()
@@ -111,7 +102,6 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
 
     }
         
-    
     @IBAction func makePaymentButton(_ sender: Any) {
         
         let loginUserId = KeychainWrapper.standard.string(forKey: "Uid")
@@ -174,7 +164,6 @@ class MakePaymentViewController: UIViewController, UITextFieldDelegate {
                         let loanDetails = json["loan_details"] as! [String : Any]
                         let userPhNum = loanDetails["phone"] as? String
                         let adderss = loanDetails["address"] as? String//financer
-                        
                         
                         print("payment financerid \(String(describing: self.financerId))")
                         for detail in emiArray{
@@ -310,17 +299,15 @@ extension MakePaymentViewController: UISideMenuNavigationControllerDelegate {
         print("SideMenu Disappeared! (animated: \(animated))")
     }
 }
-extension UIView {
-    func addShadow() {
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOffset = CGSize(width: 1, height: 1)
-        layer.shadowRadius = 2
-        layer.shadowOpacity = 0.5
-        layer.masksToBounds = false
-
-        updateShadow()
-    }
-    func updateShadow() {
-        layer.shadowPath = UIBezierPath(roundedRect: self.bounds,cornerRadius: 3).cgPath
-    }
-}
+//extension UIView {
+//    func dropShadow1(scale: Bool = true) {
+//      layer.masksToBounds = false
+//      layer.shadowColor = UIColor.black.cgColor
+//      layer.shadowOpacity = 0.5
+//      layer.shadowOffset = CGSize(width: -1, height: 1)
+//      layer.shadowRadius = 1
+//      layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+//      layer.shouldRasterize = true
+//      layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+//    }
+//}

@@ -1,5 +1,6 @@
 PODS:
   - DropDown (2.3.12)
+  - HMSegmentedControl (1.5.5)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - DropDown
+  - HMSegmentedControl
   - SDWebImage
   - SideMenu
   - SwiftKeychainWrapper
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - DropDown
+    - HMSegmentedControl
     - SDWebImage
     - SideMenu
     - SwiftKeychainWrapper
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
   TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: 666d738b889fbe01678a2da439652155f64a9831
+PODFILE CHECKSUM: 4232d881a57722557485a6e57cc9bc695eec2b6f
 
 COCOAPODS: 1.8.4

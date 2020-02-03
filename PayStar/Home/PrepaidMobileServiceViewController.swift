@@ -1,23 +1,14 @@
-//
-//  PrepaidMobileServiceViewController.swift
-//  PayStar
-//
-//  Created by Swapna Botta on 31/01/20.
-//  Copyright © 2020 SwapnaBotta. All rights reserved.
-//
 
 import UIKit
 import DropDown
-
+import SideMenu
 class PrepaidMobileServiceViewController: UIViewController {
     let dropDown = DropDown()
     
     @IBOutlet weak var backgrounrImage: UIImageView!
     @IBOutlet weak var mobileNumTextField: UITextField!
     
-    
     @IBOutlet weak var amountTextfield: UITextField!
-    
     
     @IBOutlet weak var plansBtn: UIButton!
     
@@ -27,9 +18,7 @@ class PrepaidMobileServiceViewController: UIViewController {
     @IBOutlet weak var stateButn: UIButton!
     @IBOutlet weak var rechrgTypLabel: UILabel!
     @IBOutlet weak var rechrgButn: UIButton!
-    
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,18 +29,18 @@ class PrepaidMobileServiceViewController: UIViewController {
         
         operatorButon.backgroundColor = UIColor.clear
         operatorButon.layer.cornerRadius = 5
-        operatorButon.layer.borderWidth = 2
-        operatorButon.layer.borderColor = UIColor(red: 74/255, green: 218/255, blue: 163/225, alpha: 1).cgColor
+        operatorButon.layer.borderWidth = 1
+        operatorButon.layer.borderColor = UIColor(red: 12/255, green: 20/255, blue: 70/225, alpha: 1).cgColor
         
         stateButn.backgroundColor = UIColor.clear
         stateButn.layer.cornerRadius = 5
-        stateButn.layer.borderWidth = 2
-        stateButn.layer.borderColor = UIColor(red: 74/255, green: 218/255, blue: 163/225, alpha: 1).cgColor
+        stateButn.layer.borderWidth = 1
+        stateButn.layer.borderColor = UIColor(red: 12/255, green: 20/255, blue: 70/225, alpha: 1).cgColor
         
         rechrgButn.backgroundColor = UIColor.clear
         rechrgButn.layer.cornerRadius = 5
-        rechrgButn.layer.borderWidth = 2
-        rechrgButn.layer.borderColor = UIColor(red: 74/255, green: 218/255, blue: 163/225, alpha: 1).cgColor
+        rechrgButn.layer.borderWidth = 1
+        rechrgButn.layer.borderColor = UIColor(red: 12/255, green: 20/255, blue: 70/225, alpha: 1).cgColor
         
     }
     
@@ -109,8 +98,17 @@ class PrepaidMobileServiceViewController: UIViewController {
     @IBAction func rechargeFinalButton(_ sender: Any) {
     }
     
+}
+extension PrepaidMobileServiceViewController : UISideMenuNavigationControllerDelegate {
     
-    
-    
-    
+    func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
+        print("SideMenu Appearing! (animated: \(animated))")
+        view.alpha = 0.5
+    }
+     func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+    //*do the color thing*
+        print("sidemenu disappear")
+        view.alpha = 1
+        
+}
 }

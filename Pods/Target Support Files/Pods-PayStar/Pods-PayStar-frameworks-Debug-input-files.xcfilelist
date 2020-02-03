@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-PayStar/Pods-PayStar-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
+${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework

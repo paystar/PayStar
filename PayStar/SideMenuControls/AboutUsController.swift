@@ -87,12 +87,15 @@ extension AboutUsController : UISideMenuNavigationControllerDelegate {
     
     func sideMenuWillAppear(menu: UISideMenuNavigationController, animated: Bool) {
         print("SideMenu Appearing! (animated: \(animated))")
+        
+//        aboutusWeb.alpha = 0.5
+//        aboutusWeb.backgroundColor = UIColor.clear
+//        aboutusWeb.isOpaque = false
         view.alpha = 0.5
     }
      func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
     //*do the color thing*
         print("sidemenu disappear")
         view.alpha = 1
-        
 }
 }

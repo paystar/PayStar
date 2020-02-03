@@ -34,6 +34,7 @@
 		C694DFFE237D33F200673C9F /* MakePayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */; };
 		C69996802329010500A6D20C /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C699967F2329010500A6D20C /* Validations.swift */; };
 		C6A2EF6522F096EF000883EB /* RoughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2EF6422F096EF000883EB /* RoughViewController.swift */; };
+		C6AD05DA23E5C277008EF006 /* PlansTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AD05D923E5C277008EF006 /* PlansTableViewCell.swift */; };
 		C6ADCCEC2345EFB3008B904A /* LeftMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */; };
 		C6B2F35022EDABA600291B8C /* PaymentOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */; };
 		C6B2F35222EDB89000291B8C /* PaymentOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */; };
@@ -100,6 +101,7 @@
 		C694DFFD237D33F200673C9F /* MakePayCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePayCellTableViewCell.swift; sourceTree = "<group>"; };
 		C699967F2329010500A6D20C /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		C6A2EF6422F096EF000883EB /* RoughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoughViewController.swift; sourceTree = "<group>"; };
+		C6AD05D923E5C277008EF006 /* PlansTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansTableViewCell.swift; sourceTree = "<group>"; };
 		C6ADCCEB2345EFB3008B904A /* LeftMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuVC.swift; sourceTree = "<group>"; };
 		C6B2F34F22EDABA600291B8C /* PaymentOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsViewController.swift; sourceTree = "<group>"; };
 		C6B2F35122EDB89000291B8C /* PaymentOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				C61FDBD322E0A8A800D0D4E4 /* HomeViewController.swift */,
 				C68BA1D023E431E700B09651 /* PrepaidMobileServiceViewController.swift */,
 				C653B09D23E4A06E00EE51FE /* PlansPrepaidViewController.swift */,
+				C6AD05D923E5C277008EF006 /* PlansTableViewCell.swift */,
 				C6199BBA2388296E001878D4 /* MobilePrepaidViewController.swift */,
 			);
 			path = Home;
@@ -441,6 +444,7 @@
 				C6B41DE4231EDD56008827E7 /* ENSideMenu.swift in Sources */,
 				C68BA1D123E431E700B09651 /* PrepaidMobileServiceViewController.swift in Sources */,
 				C6C96EDF2354E3F9004EEF48 /* AllMakePaymentViewController.swift in Sources */,
+				C6AD05DA23E5C277008EF006 /* PlansTableViewCell.swift in Sources */,
 				C6B41DEB231EDD7C008827E7 /* AboutUsController.swift in Sources */,
 				C6C7539123277E3400659D56 /* FeedBackViewController.swift in Sources */,
 				C685A5832308539400DB6898 /* Alert.swift in Sources */,
